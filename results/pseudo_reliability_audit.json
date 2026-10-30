@@ -1,0 +1,17 @@
+{
+  "development_confident_count": 849,
+  "development_wrong_confident_count": 55,
+  "development_confident_precision": 0.9352179034157833,
+  "by_group": {
+    "HC": {
+      "selected": 676,
+      "wrong": 37,
+      "precision": 0.9452662721893491
+    },
+    "DEP": {
+      "selected": 173,
+      "wrong": 18,
+      "precision": 0.8959537572254335
+    }
+  }
+}
