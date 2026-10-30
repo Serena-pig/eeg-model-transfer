@@ -1,0 +1,64 @@
+{
+  "results": {
+    "frozen_teacher": {
+      "pooled_auc": 0.8482006944444445,
+      "equal_clinical_mass_pooled_auc": 0.8284777343749999,
+      "DEP_auc": 0.76084375
+    },
+    "teacher_plus_source_student": {
+      "pooled_auc": 0.848029861111111,
+      "equal_clinical_mass_pooled_auc": 0.8283359375,
+      "DEP_auc": 0.76075
+    },
+    "teacher_plus_pseudo_student": {
+      "pooled_auc": 0.8480284722222222,
+      "equal_clinical_mass_pooled_auc": 0.8283273437500001,
+      "DEP_auc": 0.76068125
+    }
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "pseudo_rows": 118,
+      "source_rows": 1880,
+      "query_rows": 480,
+      "pseudo_positives": 61
+    },
+    {
+      "fold": 2,
+      "pseudo_rows": 214,
+      "source_rows": 1880,
+      "query_rows": 480,
+      "pseudo_positives": 112
+    },
+    {
+      "fold": 3,
+      "pseudo_rows": 147,
+      "source_rows": 1920,
+      "query_rows": 440,
+      "pseudo_positives": 77
+    },
+    {
+      "fold": 4,
+      "pseudo_rows": 190,
+      "source_rows": 1880,
+      "query_rows": 480,
+      "pseudo_positives": 101
+    },
+    {
+      "fold": 5,
+      "pseudo_rows": 180,
+      "source_rows": 1880,
+      "query_rows": 480,
+      "pseudo_positives": 96
+    }
+  ],
+  "public_pseudolabel_count": 80,
+  "public_eligible_count": 28,
+  "true_public_labels_available": false,
+  "public_prediction_sha256": "7fc02178331aaf60be7f432274e1f3d59e89285d9158691b7767b5ee36d2b00f",
+  "public_model_not_adapted": true,
+  "baseline_not_replaced": true,
+  "independent_confirmation": false,
+  "official_feedback": 88.13
+}
