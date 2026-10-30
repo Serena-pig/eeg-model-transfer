@@ -1,0 +1,24 @@
+{
+  "source_member_screen": "Fixed greedy12 on source3inner; .75 pooled clinical-balanced + .25 DEP, mean minus .25 std across3inner",
+  "primary_variant": "subbag16_rawmean_calibrated",
+  "primary_metric": "equal_clinical_mass_pooled_auc",
+  "public_training": false,
+  "variants": [
+    "subbag16_rawmean",
+    "subbag16_groupmean"
+  ],
+  "bags_fixed": 16,
+  "subbag_fraction_fixed": 0.8,
+  "resampling": "Subject clusters with all40windows; diagnosis stratum masses preserve actual proportions",
+  "seed_fixed": 1030,
+  "C_inherited": 0.01,
+  "conditional_mix_fixed": 0.5,
+  "ranking_loss": "Exact weighted all-pairs logistic loss on conditional-posterior logits",
+  "total_weight_per_bag": "Original source N",
+  "warm_start": "Full source fit, no out-of-bag validation claimed",
+  "CPU_workers": 2,
+  "no_outer_parameter_search": true,
+  "base_models_retrained": 0,
+  "calibration": "Previous source-inner policy inherited",
+  "script_sha256": "2d8a54c7467661d39ac6208b69fa187f32cd9d90c4770e0a5b144d41bc0d3610"
+}
