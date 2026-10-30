@@ -1,9 +1,0 @@
-{
-  "git_part_hashes_verified": 320,
-  "local_restore_script_test_passed": true,
-  "complete_zip_sha256": "d17715c2092bfb443f1b142f12e3ea3ba009f75dda65b20d30fbeafe6e0ebb15",
-  "complete_zip_bytes": 229175139,
-  "private_repository": "Serena-pig/eeg-model-transfer",
-  "official_submission_performed": false,
-  "official_test_signals_read": false
-}

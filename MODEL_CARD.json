@@ -1,0 +1,21 @@
+{
+  "version": "rank16_20261030",
+  "selected_by_user": true,
+  "source_candidate": "pooled_rank_bag_20261030/subbag16_rawmean_calibrated",
+  "legacy_development_AUC": 0.8482006944444445,
+  "equal_clinical_mass_development_AUC": 0.8284777343749999,
+  "DEP_development_AUC": 0.76084375,
+  "official_AUC": null,
+  "development_reused": true,
+  "generalization_improvement_confirmed": false,
+  "deployment": "Mean5frozenfold probabilities. Each fold uses83source models,3DE/raw neural routes,1alignedcovarianceSVM and16fusionheads.",
+  "OOF_vs_deployment": "Development score predicts each person with the single fold excluding them. Public inference averages all5folds; its AUC is unknown.",
+  "source_models_not_retrained": true,
+  "public_signals_for_model_selection": false,
+  "public_signals_for_packaging_inference_only": true,
+  "no_public_labels": true,
+  "sealed10_not_read": true,
+  "competition_submission_by_assistant": false,
+  "platform": "CPU,Windows x64 Python3.12; Linux CPU tested",
+  "raw_to_frozen_OOF_max_abs_delta": 7.54123875568169e-08
+}
