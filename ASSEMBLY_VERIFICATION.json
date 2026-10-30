@@ -1,9 +1,0 @@
-{
-  "checks_passed": true,
-  "real_common_parts_reassembled": true,
-  "zip_crc_verified": true,
-  "all_package_file_hashes_verified": true,
-  "fold_archives_individually_crc_verified_before_upload": true,
-  "model_files_lossless_hardlinks_for_space_limited_local_assembly_check": true,
-  "workbook_unchanged": true
-}
