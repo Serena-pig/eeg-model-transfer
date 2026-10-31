@@ -1,0 +1,22 @@
+{
+  "HC": {
+    "old_CNN": {
+      "corrected_teacher_pair_mass": 0.038125,
+      "broken_teacher_pair_mass": 0.1080921875
+    },
+    "new_CNN": {
+      "corrected_teacher_pair_mass": 0.0342703125,
+      "broken_teacher_pair_mass": 0.09275
+    }
+  },
+  "DEP": {
+    "old_CNN": {
+      "corrected_teacher_pair_mass": 0.07449375,
+      "broken_teacher_pair_mass": 0.147275
+    },
+    "new_CNN": {
+      "corrected_teacher_pair_mass": 0.0770125,
+      "broken_teacher_pair_mass": 0.11859375
+    }
+  }
+}

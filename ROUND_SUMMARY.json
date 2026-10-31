@@ -1,55 +1,42 @@
 {
-  "baseline_official_user_report": 88.13,
+  "official_baseline_user_report": 88.13,
   "baseline_internal_equal_clinical_mass_pooled_auc": 0.8284777343749999,
-  "experiments": [
-    {
-      "experiment": "sparse_rank12_20261031",
-      "primary": {
-        "pooled_auc": 0.8404465277777777,
-        "equal_clinical_mass_pooled_auc": 0.818875,
-        "DEP_auc": 0.7448125,
-        "paired_person_delta_95CI": [
-          -0.01581830078125,
-          -0.003895498046875003
-        ]
-      },
-      "all_five_folds_complete": true,
-      "head_fits": 80
+  "CNN_metrics": {
+    "old_CNN": {
+      "pooled_auc": 0.77491875,
+      "equal_clinical_mass_pooled_auc": 0.7544296875,
+      "DEP_auc": 0.6880625
     },
-    {
-      "experiment": "clinical_pair_robust16_20261031",
-      "primary": {
-        "pooled_auc": 0.8480930555555555,
-        "equal_clinical_mass_pooled_auc": 0.8283671875,
-        "DEP_auc": 0.7607312500000001,
-        "paired_person_delta_95CI": [
-          -0.0003894726562500005,
-          0.00021133789062500156
-        ]
-      },
-      "all_five_folds_complete": true,
-      "head_fits": 80
-    },
-    {
-      "experiment": "sharp_pair_rank16_20261031",
-      "primary": {
-        "pooled_auc": 0.8478083333333334,
-        "equal_clinical_mass_pooled_auc": 0.8283390625,
-        "DEP_auc": 0.7616249999999999,
-        "paired_person_delta_95CI": [
-          -0.001022070312499999,
-          0.000885966796874999
-        ]
-      },
-      "all_five_folds_complete": true,
-      "head_fits": 80
+    "selected_consistency_CNN": {
+      "pooled_auc": 0.7919229166666666,
+      "equal_clinical_mass_pooled_auc": 0.7745875,
+      "DEP_auc": 0.7192625
     }
-  ],
-  "new_official_auc_not_measured": true,
-  "baseline_replaced": false,
+  },
+  "replace_CNN_fusion": {
+    "pooled_auc": 0.84799375,
+    "equal_clinical_mass_pooled_auc": 0.82817734375,
+    "DEP_auc": 0.76015625,
+    "paired_person_delta_95CI": [
+      -0.0011786621093750002,
+      0.000515625
+    ]
+  },
+  "append_CNN_fusion": {
+    "pooled_auc": 0.8479652777777777,
+    "equal_clinical_mass_pooled_auc": 0.8281984375000001,
+    "DEP_auc": 0.7603687499999999,
+    "paired_person_delta_95CI": [
+      -0.0006742578125000016,
+      9.61132812500032e-05
+    ]
+  },
+  "promotion": false,
+  "outer_cohort_reused": true,
   "public_training": false,
-  "competition_submissions": 0,
-  "head_fits_completed": 240,
-  "reused_development_cohort": true,
-  "independent_confirmation": false
+  "official_submissions": 0,
+  "sealed_holdout_used": false,
+  "neural_new_fits": 35,
+  "extra_matched_control_fit": 1,
+  "fusion_head_fits": 160
 }

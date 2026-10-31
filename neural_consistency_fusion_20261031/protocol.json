@@ -1,13 +1,14 @@
 {
-  "pair_softplus_temperature": 0.5,
-  "primary_variant": "subbag16_rawmean_calibrated",
-  "primary_metric": "equal_clinical_mass_pooled_auc",
-  "public_training": false,
   "variants": [
     "subbag16_rawmean",
     "subbag16_groupmean"
   ],
   "bags_fixed": 16,
+  "primary_metric": "equal_clinical_mass_pooled_auc",
+  "primary_variant": "subbag16_rawmean_calibrated",
+  "neural_consistency_selection": "source3inner gamma0/.1/1",
+  "replaced_neural_column": 83,
+  "real_public_data_used": false,
   "subbag_fraction_fixed": 0.8,
   "resampling": "Subject clusters with all40windows; diagnosis stratum masses preserve actual proportions",
   "seed_fixed": 1030,
@@ -16,9 +17,9 @@
   "ranking_loss": "Exact weighted all-pairs logistic loss on conditional-posterior logits",
   "total_weight_per_bag": "Original source N",
   "warm_start": "Full source fit, no out-of-bag validation claimed",
-  "CPU_workers": 2,
+  "CPU_workers": 1,
   "no_outer_parameter_search": true,
   "base_models_retrained": 0,
   "calibration": "Previous source-inner policy inherited",
-  "script_sha256": "944b67dada4bddf4b1a30b763490fe75544d30bd917e14c53e54b2c009f19931"
+  "script_sha256": "0041bf85a9db98e30146c91898f42186132fe309ce7d5ea132b22f9800851cc8"
 }

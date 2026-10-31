@@ -1,14 +1,15 @@
 {
-  "pair_robust_temperature": 1.0,
-  "robust_loss": "Log-sum-exp of4 clinical-pair mean risks, nominal source pair proportions preserved",
-  "primary_variant": "subbag16_rawmean_calibrated",
-  "primary_metric": "equal_clinical_mass_pooled_auc",
-  "public_training": false,
   "variants": [
     "subbag16_rawmean",
     "subbag16_groupmean"
   ],
   "bags_fixed": 16,
+  "primary_metric": "equal_clinical_mass_pooled_auc",
+  "primary_variant": "subbag16_rawmean_calibrated",
+  "neural_consistency_selection": "source3inner gamma0/.1/1",
+  "additional_neural_column": 87,
+  "old_CNN_retained": true,
+  "real_public_data_used": false,
   "subbag_fraction_fixed": 0.8,
   "resampling": "Subject clusters with all40windows; diagnosis stratum masses preserve actual proportions",
   "seed_fixed": 1030,
@@ -21,5 +22,5 @@
   "no_outer_parameter_search": true,
   "base_models_retrained": 0,
   "calibration": "Previous source-inner policy inherited",
-  "script_sha256": "fd981dbc3f081aea42cc66edc78ea9d3e69ddaba72e8ddf9c4021835a5f3141c"
+  "script_sha256": "a245877f9ae4b47bc0146e7f28f879c7f50825a74770c3c7a197b760b07bbdef"
 }
