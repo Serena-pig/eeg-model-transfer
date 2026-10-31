@@ -1,0 +1,308 @@
+{
+  "primary_metric": "unweighted pooled AUC on unchanged60people2400records",
+  "per_seed": [
+    {
+      "seed": 1031,
+      "baseline_auc": 0.8476645833333334,
+      "graph_fusion_auc": 0.8478861111111112,
+      "paired_delta": 0.00022152777777784127,
+      "baseline_DEP_auc": 0.7600374999999999,
+      "graph_DEP_auc": 0.76033125
+    },
+    {
+      "seed": 1032,
+      "baseline_auc": 0.8476888888888889,
+      "graph_fusion_auc": 0.8478736111111111,
+      "paired_delta": 0.00018472222222221113,
+      "baseline_DEP_auc": 0.75991875,
+      "graph_DEP_auc": 0.7603624999999999
+    },
+    {
+      "seed": 1033,
+      "baseline_auc": 0.8471861111111112,
+      "graph_fusion_auc": 0.847351388888889,
+      "paired_delta": 0.00016527777777775032,
+      "baseline_DEP_auc": 0.758025,
+      "graph_DEP_auc": 0.7589875
+    },
+    {
+      "seed": 1034,
+      "baseline_auc": 0.8467159722222222,
+      "graph_fusion_auc": 0.8469493055555555,
+      "paired_delta": 0.00023333333333330764,
+      "baseline_DEP_auc": 0.75875,
+      "graph_DEP_auc": 0.75905
+    },
+    {
+      "seed": 1035,
+      "baseline_auc": 0.8477520833333333,
+      "graph_fusion_auc": 0.8479736111111111,
+      "paired_delta": 0.00022152777777784127,
+      "baseline_DEP_auc": 0.76114375,
+      "graph_DEP_auc": 0.7614125
+    }
+  ],
+  "positive_seeds": 5,
+  "total_new_seeds": 5,
+  "mean_paired_auc_delta": 0.00020527777777779033,
+  "paired_person_bootstrap10000_95CI": [
+    -0.00045930902777777794,
+    0.000872104166666666
+  ],
+  "leave_one_person_out": [
+    {
+      "subject": "DEP01",
+      "mean_delta": 0.00020812984774489784
+    },
+    {
+      "subject": "DEP03",
+      "mean_delta": 0.0002500718184430317
+    },
+    {
+      "subject": "DEP04",
+      "mean_delta": 0.00016101694915253705
+    },
+    {
+      "subject": "DEP05",
+      "mean_delta": 0.000200948003447321
+    },
+    {
+      "subject": "DEP06",
+      "mean_delta": 0.0001957770755530497
+    },
+    {
+      "subject": "DEP07",
+      "mean_delta": 0.0001693478885379074
+    },
+    {
+      "subject": "DEP08",
+      "mean_delta": 0.0002608445848894192
+    },
+    {
+      "subject": "DEP09",
+      "mean_delta": 0.0001897443263431331
+    },
+    {
+      "subject": "DEP10",
+      "mean_delta": 0.00022278081011206652
+    },
+    {
+      "subject": "DEP11",
+      "mean_delta": 0.00018428612467671356
+    },
+    {
+      "subject": "DEP13",
+      "mean_delta": 0.00021200804366561243
+    },
+    {
+      "subject": "DEP14",
+      "mean_delta": 0.00020899166906063193
+    },
+    {
+      "subject": "DEP15",
+      "mean_delta": 0.00012525136455034946
+    },
+    {
+      "subject": "DEP16",
+      "mean_delta": 0.00018758977305373127
+    },
+    {
+      "subject": "DEP17",
+      "mean_delta": 0.00013932777937384345
+    },
+    {
+      "subject": "DEP19",
+      "mean_delta": 0.0001954898017811013
+    },
+    {
+      "subject": "DEP21",
+      "mean_delta": 0.00019864981327193386
+    },
+    {
+      "subject": "DEP22",
+      "mean_delta": 0.00024877908646940837
+    },
+    {
+      "subject": "DEP24",
+      "mean_delta": 0.0002071243895433117
+    },
+    {
+      "subject": "DEP25",
+      "mean_delta": 0.00022708991669069257
+    },
+    {
+      "subject": "HC01",
+      "mean_delta": 0.00024288997414536606
+    },
+    {
+      "subject": "HC02",
+      "mean_delta": 0.0002489227233553715
+    },
+    {
+      "subject": "HC03",
+      "mean_delta": 0.00020338983050847138
+    },
+    {
+      "subject": "HC05",
+      "mean_delta": 0.00039600689457051084
+    },
+    {
+      "subject": "HC06",
+      "mean_delta": 0.00022479172651541647
+    },
+    {
+      "subject": "HC07",
+      "mean_delta": 0.0002266590060328255
+    },
+    {
+      "subject": "HC08",
+      "mean_delta": 0.00016374604998565802
+    },
+    {
+      "subject": "HC09",
+      "mean_delta": 0.00021832806664765503
+    },
+    {
+      "subject": "HC10",
+      "mean_delta": 0.0002008043665613579
+    },
+    {
+      "subject": "HC11",
+      "mean_delta": 0.00021344441252515444
+    },
+    {
+      "subject": "HC12",
+      "mean_delta": 0.00024590634875041315
+    },
+    {
+      "subject": "HC13",
+      "mean_delta": 0.00020884803217471326
+    },
+    {
+      "subject": "HC14",
+      "mean_delta": 0.00015943694340707636
+    },
+    {
+      "subject": "HC15",
+      "mean_delta": 0.00019103705831668982
+    },
+    {
+      "subject": "HC16",
+      "mean_delta": 0.00019419706980750018
+    },
+    {
+      "subject": "HC17",
+      "mean_delta": 0.0002351335823039369
+    },
+    {
+      "subject": "HC18",
+      "mean_delta": 0.00020022981901748337
+    },
+    {
+      "subject": "HC19",
+      "mean_delta": 0.00016748060902049833
+    },
+    {
+      "subject": "HC21",
+      "mean_delta": 0.0002390117782246959
+    },
+    {
+      "subject": "HC22",
+      "mean_delta": 0.00020812984774496446
+    },
+    {
+      "subject": "HC23",
+      "mean_delta": 0.00020137891410514363
+    },
+    {
+      "subject": "HC24",
+      "mean_delta": 0.00021344441252511004
+    },
+    {
+      "subject": "HC25",
+      "mean_delta": 0.00020784257397299388
+    },
+    {
+      "subject": "HC26",
+      "mean_delta": 0.0001924734271760986
+    },
+    {
+      "subject": "HC27",
+      "mean_delta": 3.1025567365716714e-05
+    },
+    {
+      "subject": "HC28",
+      "mean_delta": 0.00022407354208560105
+    },
+    {
+      "subject": "HC30",
+      "mean_delta": 0.00020827348463088314
+    },
+    {
+      "subject": "HC31",
+      "mean_delta": 0.00021172076989373068
+    },
+    {
+      "subject": "HC32",
+      "mean_delta": 0.00023441539787409925
+    },
+    {
+      "subject": "HC34",
+      "mean_delta": 0.0002351335823039813
+    },
+    {
+      "subject": "HC35",
+      "mean_delta": 0.00023139902326916318
+    },
+    {
+      "subject": "HC36",
+      "mean_delta": 0.00023254811835682343
+    },
+    {
+      "subject": "HC37",
+      "mean_delta": 0.00018615340419416703
+    },
+    {
+      "subject": "HC38",
+      "mean_delta": 0.00020568802068365866
+    },
+    {
+      "subject": "HC39",
+      "mean_delta": 0.00013961505314563638
+    },
+    {
+      "subject": "HC40",
+      "mean_delta": 0.00017308244757254787
+    },
+    {
+      "subject": "HC41",
+      "mean_delta": 0.00022924446997998337
+    },
+    {
+      "subject": "HC42",
+      "mean_delta": 0.00019893708704392664
+    },
+    {
+      "subject": "HC43",
+      "mean_delta": 0.00017207698937096171
+    },
+    {
+      "subject": "HC44",
+      "mean_delta": 0.00020468256248200588
+    }
+  ],
+  "leave_one_person_out_positive_count": 60,
+  "descriptive_remove2": [
+    "HC27",
+    "DEP15"
+  ],
+  "descriptive_delta_remove2": -4.964328180736555e-05,
+  "predeclared_criterion_passed": false,
+  "graph_weight_randomness_tested": false,
+  "only_fusion_seed_varied": true,
+  "cohort_reused": true,
+  "independent_generalization_confirmed": false,
+  "promotion": false,
+  "holdout_used": false,
+  "official_submissions": 0
+}
