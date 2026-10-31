@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "windows": 2360,
+  "max_float16_absolute_error": 0.00024414061473421178,
+  "static_sha256": "92d4e43ea04eebfc34d7b781f755062ee1b641a3a687fea3ad5be5a64d30e297",
+  "dynamic_sha256": "93811eb09733ec965a776f68e8bc13f3ef5ba8c36174e4c04fdd016f5f74869b",
+  "public_data_used": false,
+  "holdout_used": false
+}

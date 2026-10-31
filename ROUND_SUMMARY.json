@@ -2,77 +2,74 @@
   "primary_metric": "original unweighted pooled ROC AUC, unchanged60people2400records",
   "original_baseline_auc": 0.8482006944444445,
   "static_graph_reference_auc": 0.8484,
-  "temporal_fusion": {
-    "primary_pooled_auc": 0.848227777777778,
+  "new_source_selected_local_connectivity_policy": {
+    "primary_pooled_auc": 0.8484173611111112,
     "static_graph_reference_auc": 0.8484,
-    "delta_vs_static_graph": -0.00017222222222201822,
+    "delta_vs_static_graph": 1.7361111111169336e-05,
     "paired_person_delta_vs_static_graph_95CI": [
-      -0.0008361284722222233,
-      0.0004937673611111108
+      -0.00035071180555555593,
+      0.0003743229166666655
     ],
     "cohort_reused": true,
-    "independent_confirmation": false
-  },
-  "dual_graph_fusion": {
-    "primary_pooled_auc": 0.8483361111111111,
-    "static_graph_reference_auc": 0.8484,
-    "delta_vs_static_graph": -6.388888888897437e-05,
-    "paired_person_delta_vs_static_graph_95CI": [
-      -0.0002173784722222224,
-      7.223958333333323e-05
-    ],
-    "cohort_reused": true,
-    "independent_confirmation": false
+    "independent_confirmation": false,
+    "promotion": false,
+    "official_submission": false
   },
   "inner_choices": [
     {
       "fold": 1,
-      "chosen": "summary",
+      "chosen": "old_static",
       "source_pooled_scores": {
-        "static": 0.7845106336805555,
-        "summary": 0.7901345486111111,
-        "bigru": 0.7844791666666666
+        "old_static": 0.7845106336805555,
+        "matched_static": 0.7780815972222223,
+        "dynamic": 0.7788444010416666
       }
     },
     {
       "fold": 2,
-      "chosen": "bigru",
+      "chosen": "dynamic",
       "source_pooled_scores": {
-        "static": 0.7516351996527779,
-        "summary": 0.760676540798611,
-        "bigru": 0.7665115017361112
+        "old_static": 0.7516351996527779,
+        "matched_static": 0.7615332031250001,
+        "dynamic": 0.7617740885416667
       }
     },
     {
       "fold": 3,
-      "chosen": "bigru",
+      "chosen": "dynamic",
       "source_pooled_scores": {
-        "static": 0.754873046875,
-        "summary": 0.7733029513888888,
-        "bigru": 0.7776475694444445
+        "old_static": 0.754873046875,
+        "matched_static": 0.7657552083333333,
+        "dynamic": 0.7663335503472222
       }
     },
     {
       "fold": 4,
-      "chosen": "bigru",
+      "chosen": "dynamic",
       "source_pooled_scores": {
-        "static": 0.7720388454861111,
-        "summary": 0.7747504340277778,
-        "bigru": 0.7854155815972224
+        "old_static": 0.7720388454861111,
+        "matched_static": 0.7725911458333333,
+        "dynamic": 0.7733192274305556
       }
     },
     {
       "fold": 5,
-      "chosen": "bigru",
+      "chosen": "old_static",
       "source_pooled_scores": {
-        "static": 0.7701757812500001,
-        "summary": 0.7780631510416667,
-        "bigru": 0.7788943142361112
+        "old_static": 0.7701757812500001,
+        "matched_static": 0.7672835286458333,
+        "dynamic": 0.76806640625
       }
     }
   ],
-  "new_neural_fits": 35,
-  "new_fusion_head_fits": 160,
+  "training_count_audit": {
+    "used_neural_checkpoints": 33,
+    "inner_caches": 30,
+    "maximum_stored_reverse_trial_reload_error": 9.5367431640625e-07,
+    "new_fusion_folds": 3,
+    "reused_static_fusion_folds": 2,
+    "unused_staging_checkpoints": 1
+  },
   "official_baseline_user_report": 88.13,
   "promotion": false,
   "holdout_used": false,

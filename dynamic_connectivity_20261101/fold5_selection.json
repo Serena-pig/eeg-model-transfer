@@ -1,0 +1,9 @@
+{
+  "fold": 5,
+  "chosen": "old_static",
+  "source_pooled_scores": {
+    "old_static": 0.7701757812500001,
+    "matched_static": 0.7672835286458333,
+    "dynamic": 0.76806640625
+  }
+}

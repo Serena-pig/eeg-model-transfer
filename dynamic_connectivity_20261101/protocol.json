@@ -1,0 +1,17 @@
+{
+  "modes": [
+    "old_static",
+    "matched_static",
+    "dynamic"
+  ],
+  "epochs": 20,
+  "seed": 110161,
+  "matched_architecture": true,
+  "matched_static_dynamic_difference": "Static10s vs local2s correlation edges; same local power nodes and same classifier",
+  "source_inner_selection": "max unweighted pooled AUC of source3inner; require .001 gain over old_static else fallback",
+  "primary_metric": "unweighted_pooled_auc",
+  "feature_cache_completion_sha256": "76f1b21858e8efcbd65361dd958230e5af694a85e0bc6d86ccf54a8d54c3432f",
+  "public_data_used": false,
+  "holdout_used": false,
+  "script_sha256": "dbdb4bcfaf85191b9680bcced5a6b5c053aa1f4cd87813d21010dfb716af8737"
+}

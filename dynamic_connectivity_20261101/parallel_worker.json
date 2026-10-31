@@ -1,0 +1,38 @@
+{
+  "records": [
+    {
+      "fold": 5,
+      "part": 0,
+      "mode": "matched_static",
+      "seconds": 14.88259768486023,
+      "checkpoint_sha256": "69b95c09d74d0768f0cf2e2133a451b737d348db457dcb5c91a9f6e13b66facc",
+      "reload_error": 7.152557373046875e-07
+    },
+    {
+      "fold": 5,
+      "part": 0,
+      "mode": "dynamic",
+      "seconds": 15.965100288391113,
+      "checkpoint_sha256": "6be60f5e68d92596b89c734fb78a6ab43ca756ee16399dc38a22fed8d2761e40",
+      "reload_error": 7.152557373046875e-07
+    },
+    {
+      "fold": 5,
+      "part": 1,
+      "mode": "matched_static",
+      "seconds": 15.413801193237305,
+      "checkpoint_sha256": "dd02415c558861a51c729311d1ac9cc95223b36cdf2b556692a60f031047bdbb",
+      "reload_error": 4.76837158203125e-07
+    },
+    {
+      "fold": 5,
+      "part": 1,
+      "mode": "dynamic",
+      "seconds": 18.083717346191406,
+      "checkpoint_sha256": "74cc68b7934e92b55c4764561270f3557abf7d71f5b783dfb0d212c111247a0d",
+      "reload_error": 7.152557373046875e-07
+    }
+  ],
+  "stopped_for_separation": true,
+  "unpublished_checkpoint": "/workspace/work/official_competition/v279_rebuild/dynamic_connectivity_20261101/parallel_staging/matched_static_fold5_inner2.pt"
+}

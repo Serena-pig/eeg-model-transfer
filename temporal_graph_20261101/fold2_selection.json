@@ -1,9 +1,0 @@
-{
-  "fold": 2,
-  "chosen": "bigru",
-  "source_pooled_scores": {
-    "static": 0.7516351996527779,
-    "summary": 0.760676540798611,
-    "bigru": 0.7665115017361112
-  }
-}

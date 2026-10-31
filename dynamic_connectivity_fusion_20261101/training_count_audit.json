@@ -1,0 +1,8 @@
+{
+  "used_neural_checkpoints": 33,
+  "inner_caches": 30,
+  "maximum_stored_reverse_trial_reload_error": 9.5367431640625e-07,
+  "new_fusion_folds": 3,
+  "reused_static_fusion_folds": 2,
+  "unused_staging_checkpoints": 1
+}
