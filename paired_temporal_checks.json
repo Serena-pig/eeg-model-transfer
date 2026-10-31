@@ -1,0 +1,29 @@
+{
+  "HC": {
+    "crop4_minus_crop0_pooled_auc_delta": -0.035546875,
+    "paired_person_95CI": [
+      -0.1012109375,
+      0.025704101562499988
+    ],
+    "trial_fraction_crossing_probability_half_across_5crops": 0.41875,
+    "median_trial_prediction_std_across5crops": 0.1232942184338031,
+    "number_of_people": 40,
+    "number_of_trials": 320,
+    "exploratory": true,
+    "not_multiple_comparison_adjusted": true
+  },
+  "DEP": {
+    "crop4_minus_crop0_pooled_auc_delta": 0.12609375,
+    "paired_person_95CI": [
+      0.0375,
+      0.21578515624999994
+    ],
+    "trial_fraction_crossing_probability_half_across_5crops": 0.63125,
+    "median_trial_prediction_std_across5crops": 0.14006738865407742,
+    "number_of_people": 20,
+    "number_of_trials": 160,
+    "exploratory": true,
+    "not_multiple_comparison_adjusted": true
+  },
+  "baseline_workbook_sha256": "dc0bd4751d35badc3731533edcb8f6374c8996d050e61c1c946d5eeeb642dec4"
+}
