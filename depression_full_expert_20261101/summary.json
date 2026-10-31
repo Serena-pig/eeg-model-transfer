@@ -1,0 +1,80 @@
+{
+  "selections": [
+    {
+      "fold": 1,
+      "chosen": "warmup",
+      "source_metrics": {
+        "warmup": {
+          "pooled_auc": 0.7864019097222222,
+          "DEP_auc": 0.700146484375
+        },
+        "full": {
+          "pooled_auc": 0.7743207465277777,
+          "DEP_auc": 0.7024902343749999
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "chosen": "warmup",
+      "source_metrics": {
+        "warmup": {
+          "pooled_auc": 0.7569585503472221,
+          "DEP_auc": 0.6521777343749999
+        },
+        "full": {
+          "pooled_auc": 0.7406770833333334,
+          "DEP_auc": 0.645751953125
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "chosen": "warmup",
+      "source_metrics": {
+        "warmup": {
+          "pooled_auc": 0.7697612847222222,
+          "DEP_auc": 0.6661035156250001
+        },
+        "full": {
+          "pooled_auc": 0.754406467013889,
+          "DEP_auc": 0.6622265625
+        }
+      }
+    },
+    {
+      "fold": 4,
+      "chosen": "warmup",
+      "source_metrics": {
+        "warmup": {
+          "pooled_auc": 0.7753765190972223,
+          "DEP_auc": 0.663818359375
+        },
+        "full": {
+          "pooled_auc": 0.7604568142361112,
+          "DEP_auc": 0.653525390625
+        }
+      }
+    },
+    {
+      "fold": 5,
+      "chosen": "warmup",
+      "source_metrics": {
+        "warmup": {
+          "pooled_auc": 0.7658105468749999,
+          "DEP_auc": 0.7120410156250001
+        },
+        "full": {
+          "pooled_auc": 0.7533463541666666,
+          "DEP_auc": 0.709951171875
+        }
+      }
+    }
+  ],
+  "primary_pooled_auc": 0.7919229166666666,
+  "DEP_auc": 0.7192625,
+  "all5outer3inner_complete": true,
+  "cohort_reused": true,
+  "public_data_used": false,
+  "official_submission": false
+}

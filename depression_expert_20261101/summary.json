@@ -1,0 +1,100 @@
+{
+  "selections": [
+    {
+      "fold": 1,
+      "chosen": "warmup",
+      "source_metrics": {
+        "warmup": {
+          "pooled_auc": 0.7864019097222222,
+          "DEP_auc": 0.700146484375
+        },
+        "head": {
+          "pooled_auc": 0.7858029513888889,
+          "DEP_auc": 0.705126953125
+        },
+        "head_time": {
+          "pooled_auc": 0.7846256510416665,
+          "DEP_auc": 0.7045019531250001
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "chosen": "warmup",
+      "source_metrics": {
+        "warmup": {
+          "pooled_auc": 0.7569585503472221,
+          "DEP_auc": 0.6521777343749999
+        },
+        "head": {
+          "pooled_auc": 0.7508506944444444,
+          "DEP_auc": 0.648056640625
+        },
+        "head_time": {
+          "pooled_auc": 0.7495762803819445,
+          "DEP_auc": 0.6469140625
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "chosen": "warmup",
+      "source_metrics": {
+        "warmup": {
+          "pooled_auc": 0.7697612847222222,
+          "DEP_auc": 0.6661035156250001
+        },
+        "head": {
+          "pooled_auc": 0.7653428819444444,
+          "DEP_auc": 0.66498046875
+        },
+        "head_time": {
+          "pooled_auc": 0.7649565972222223,
+          "DEP_auc": 0.6661035156249999
+        }
+      }
+    },
+    {
+      "fold": 4,
+      "chosen": "warmup",
+      "source_metrics": {
+        "warmup": {
+          "pooled_auc": 0.7753765190972223,
+          "DEP_auc": 0.663818359375
+        },
+        "head": {
+          "pooled_auc": 0.7739637586805554,
+          "DEP_auc": 0.6636523437500002
+        },
+        "head_time": {
+          "pooled_auc": 0.7726801215277778,
+          "DEP_auc": 0.662841796875
+        }
+      }
+    },
+    {
+      "fold": 5,
+      "chosen": "warmup",
+      "source_metrics": {
+        "warmup": {
+          "pooled_auc": 0.7658105468749999,
+          "DEP_auc": 0.7120410156250001
+        },
+        "head": {
+          "pooled_auc": 0.7637358940972223,
+          "DEP_auc": 0.7094824218749999
+        },
+        "head_time": {
+          "pooled_auc": 0.7629286024305555,
+          "DEP_auc": 0.7091015625
+        }
+      }
+    }
+  ],
+  "primary_pooled_auc": 0.7919229166666666,
+  "DEP_auc": 0.7192625,
+  "all5outer3inner_complete": true,
+  "cohort_reused": true,
+  "public_data_used": false,
+  "official_submission": false
+}

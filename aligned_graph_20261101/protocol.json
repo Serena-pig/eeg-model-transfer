@@ -1,0 +1,12 @@
+{
+  "architecture": "Two-layer7band Euclidean-aligned log-covariance graph +8band DE nodes + learned channel embeddings",
+  "alignment": "Unlabeled8trials of same person and crop; SPD eigenfloor1e-7; no other50s crops",
+  "seed": 110131,
+  "epochs": 20,
+  "train_sampling": "balanced source diagnosis, fixed4patient batch",
+  "primary_metric": "unweighted pooled AUC",
+  "all5outer3inner": true,
+  "no_hyperparameter_selection_on_outer": true,
+  "no_public_or_holdout_used": true,
+  "script_sha256": "b0e02f72db5f0efb175528f7c661b0676f1372202f1a33be6ddf2e15036f9f2a"
+}

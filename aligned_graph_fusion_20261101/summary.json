@@ -1,0 +1,47 @@
+{
+  "results": {
+    "subbag16_rawmean": {
+      "pooled_auc": 0.8468069444444444,
+      "equal_clinical_mass_pooled_auc": 0.8269875000000001,
+      "DEP_auc": 0.75925625,
+      "paired_person_delta_95CI": [
+        -0.002940312500000001,
+        0.0003174131944444425
+      ]
+    },
+    "subbag16_groupmean": {
+      "pooled_auc": 0.8479562500000002,
+      "equal_clinical_mass_pooled_auc": 0.8281125,
+      "DEP_auc": 0.7599312500000001,
+      "paired_person_delta_95CI": [
+        -0.0010697048611111098,
+        0.0005619270833333332
+      ]
+    },
+    "subbag16_rawmean_calibrated": {
+      "pooled_auc": 0.8479708333333333,
+      "equal_clinical_mass_pooled_auc": 0.8281265625,
+      "DEP_auc": 0.75994375,
+      "paired_person_delta_95CI": [
+        -0.0010590451388888882,
+        0.000591093750000001
+      ]
+    },
+    "subbag16_groupmean_calibrated": {
+      "pooled_auc": 0.8479562500000002,
+      "equal_clinical_mass_pooled_auc": 0.8281125,
+      "DEP_auc": 0.7599312500000001,
+      "paired_person_delta_95CI": [
+        -0.0010697048611111098,
+        0.0005619270833333332
+      ]
+    }
+  },
+  "anchor_auc": 0.8482006944444445,
+  "anchor_equal_clinical_mass_pooled_auc": 0.8284777343749999,
+  "paired_person_interval_metric": "unweighted_pooled_auc",
+  "baseline_preserved": true,
+  "cohort_reused": true,
+  "multiple_search_uncorrected": true,
+  "official_score_unknown": true
+}

@@ -1,0 +1,18 @@
+{
+  "strategies": [
+    "full"
+  ],
+  "epochs": 30,
+  "seed": 110103,
+  "source_sampling": "3DEP+1HC healthy replay",
+  "lr": 0.0003,
+  "weight_decay": 0.03,
+  "l2_anchor": 0.001,
+  "consistency_weight": 1.0,
+  "selection": "Highest source-inner DEP AUC, pooled source AUC floor warmup-.005; require DEP gain .005, else warmup",
+  "primary_final_metric": "unweighted pooled AUC on unchanged2400records",
+  "no_outer_selection": true,
+  "public_test_used": false,
+  "holdout_used": false,
+  "script_sha256": "a531571d5abeef5a315afe6d95a94f9463cf4b0549c4e7f0e940cdb1bf3b9aee"
+}

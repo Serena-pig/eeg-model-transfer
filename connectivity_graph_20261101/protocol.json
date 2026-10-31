@@ -1,0 +1,11 @@
+{
+  "architecture": "Two-layer7band signed correlation message passing +8band DE nodes + learned channel embeddings",
+  "seed": 110131,
+  "epochs": 20,
+  "train_sampling": "balanced source diagnosis, fixed4patient batch",
+  "primary_metric": "unweighted pooled AUC",
+  "all5outer3inner": true,
+  "no_hyperparameter_selection_on_outer": true,
+  "no_public_or_holdout_used": true,
+  "script_sha256": "75ec2d455c5deb49de9a3d32e29d4bff742c337c79e95a9ecbc139af7212b14b"
+}
