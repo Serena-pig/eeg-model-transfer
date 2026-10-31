@@ -1,0 +1,114 @@
+{
+  "chosen": {
+    "gamma": 1.0,
+    "alpha": 1.0,
+    "gate": "constant",
+    "auc": 0.778974649162517
+  },
+  "candidates": [
+    {
+      "gamma": 0.0,
+      "alpha": 0.0,
+      "gate": "constant",
+      "auc": 0.7581779085559077
+    },
+    {
+      "gamma": 0.1,
+      "alpha": 0.25,
+      "gate": "constant",
+      "auc": 0.7613942960615664
+    },
+    {
+      "gamma": 0.1,
+      "alpha": 0.5,
+      "gate": "constant",
+      "auc": 0.7634563150746945
+    },
+    {
+      "gamma": 0.1,
+      "alpha": 0.75,
+      "gate": "constant",
+      "auc": 0.7645812584880036
+    },
+    {
+      "gamma": 0.1,
+      "alpha": 1.0,
+      "gate": "constant",
+      "auc": 0.7648166591217744
+    },
+    {
+      "gamma": 0.1,
+      "alpha": 0.25,
+      "gate": "clinical_soft",
+      "auc": 0.7600509280217294
+    },
+    {
+      "gamma": 0.1,
+      "alpha": 0.5,
+      "gate": "clinical_soft",
+      "auc": 0.7616296966953373
+    },
+    {
+      "gamma": 0.1,
+      "alpha": 0.75,
+      "gate": "clinical_soft",
+      "auc": 0.7628859212313264
+    },
+    {
+      "gamma": 0.1,
+      "alpha": 1.0,
+      "gate": "clinical_soft",
+      "auc": 0.7639644635581712
+    },
+    {
+      "gamma": 1.0,
+      "alpha": 0.25,
+      "gate": "constant",
+      "auc": 0.7676969216840199
+    },
+    {
+      "gamma": 1.0,
+      "alpha": 0.5,
+      "gate": "constant",
+      "auc": 0.7739644635581711
+    },
+    {
+      "gamma": 1.0,
+      "alpha": 0.75,
+      "gate": "constant",
+      "auc": 0.7779130828429154
+    },
+    {
+      "gamma": 1.0,
+      "alpha": 1.0,
+      "gate": "constant",
+      "auc": 0.778974649162517
+    },
+    {
+      "gamma": 1.0,
+      "alpha": 0.25,
+      "gate": "clinical_soft",
+      "auc": 0.7636905839746492
+    },
+    {
+      "gamma": 1.0,
+      "alpha": 0.5,
+      "gate": "clinical_soft",
+      "auc": 0.7682152557718425
+    },
+    {
+      "gamma": 1.0,
+      "alpha": 0.75,
+      "gate": "clinical_soft",
+      "auc": 0.7718730194658217
+    },
+    {
+      "gamma": 1.0,
+      "alpha": 1.0,
+      "gate": "clinical_soft",
+      "auc": 0.7747872340425532
+    }
+  ],
+  "minimum_source_gain": 0.001,
+  "source_only": true
+}

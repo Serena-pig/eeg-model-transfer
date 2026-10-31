@@ -1,0 +1,28 @@
+{
+  "independent_residual_head_reload_errors": [
+    5.003775171985581e-13,
+    4.989342272665453e-13,
+    5.000444502911705e-13,
+    5.325739849126876e-13,
+    5.002248615326721e-13
+  ],
+  "source_target_labels_not_used_for_replay": true,
+  "primary_metric": "unweighted_pooled_auc",
+  "rounded_auc": {
+    "6": 0.8482701388888889,
+    "8": 0.8482701388888889,
+    "10": 0.8482701388888889,
+    "12": 0.8482701388888889
+  },
+  "outer_fold_auc_deltas": [
+    0.0006770833333333837,
+    0.0003298611111108851,
+    5.2083333333285964e-05,
+    -0.000590277777777759,
+    0.00024305555555548253
+  ],
+  "leave_one_person_out_positive_count": 59,
+  "leave_one_person_out_count": 60,
+  "exploratory_reused_cohort": true,
+  "no_independent_gain_claim": true
+}

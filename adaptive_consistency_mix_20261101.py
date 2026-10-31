@@ -19,11 +19,11 @@ from context_rank_v34 import fit_context,context_features
 from select_ensemble import ASSIGNMENTS,postprocess
 from inner_calibration_round import calibrate
 from postflight import pair_matrix
-OUT=driver.JOB/'neural_consistency_fusion_20261031';OUT.mkdir(exist_ok=True)
+OUT=driver.JOB/'adaptive_consistency_mix_20261101';OUT.mkdir(exist_ok=True)
 BAGS=16
 NAMES=['subbag16_rawmean','subbag16_groupmean']
 def main():
- threadpool_limits(limits=1);p=driver.protocol();spec=dict(variants=NAMES,bags_fixed=BAGS,primary_metric='equal_clinical_mass_pooled_auc',primary_variant='subbag16_rawmean_calibrated',neural_consistency_selection='source3inner gamma0/.1/1',replaced_neural_column=83,real_public_data_used=False,subbag_fraction_fixed=.8,resampling='Subject clusters with all40windows; diagnosis stratum masses preserve actual proportions',seed_fixed=1030,C_inherited=.01,conditional_mix_fixed=.5,ranking_loss='Exact weighted all-pairs logistic loss on conditional-posterior logits',total_weight_per_bag='Original source N',warm_start='Full source fit, no out-of-bag validation claimed',CPU_workers=1,no_outer_parameter_search=True,base_models_retrained=0,calibration='Previous source-inner policy inherited',script_sha256=driver.sha(__file__))
+ threadpool_limits(limits=1);p=driver.protocol();spec=dict(variants=NAMES,bags_fixed=BAGS,primary_metric='unweighted_pooled_auc',primary_variant='subbag16_rawmean_calibrated',neural_consistency_selection='source-inner pooled AUC: old control or gamma.1/1 with fixed alpha grid and constant/clinical soft gate',replaced_neural_column=83,real_public_data_used=False,subbag_fraction_fixed=.8,resampling='Subject clusters with all40windows; diagnosis stratum masses preserve actual proportions',seed_fixed=1030,C_inherited=.01,conditional_mix_fixed=.5,ranking_loss='Exact weighted all-pairs logistic loss on conditional-posterior logits',total_weight_per_bag='Original source N',warm_start='Full source fit, no out-of-bag validation claimed',CPU_workers=2,no_outer_parameter_search=True,base_models_retrained=0,calibration='Previous source-inner policy inherited',script_sha256=driver.sha(__file__))
  if (OUT/'protocol.json').exists():assert json.loads((OUT/'protocol.json').read_text())==spec
  else:driver.save(OUT/'protocol.json',spec)
  with np.load(driver.ART/'features.npz') as a:d={k:a[k] for k in ['subject','trial','crop','label','diagnosis','train','powers','quality']}
@@ -44,17 +44,42 @@ def main():
   for part in range(3):
    with np.load(driver.JOB/f'aligned_covariance_svm_20261030/fold{f["fold"]}_inner{part}.npz') as a:zin[[lookup[v] for v in a['validation']]]=a['logits']
   with np.load(driver.JOB/f'aligned_covariance_svm_20261030/fold{f["fold"]}_outer.npz') as a:assert np.array_equal(a['validation'],va);zout=a['logits']
-  # Replace only the3neural source-OOF columns, using their own clean-inner scales.
-  reverse=np.full(len(full['label']),-1,dtype=int);reverse[full['model_row_to_full_row']]=np.arange(len(d['label']));tta_scales=[]
-  for column,mode in [(83,'de_cnn')]:
-   zi=np.zeros(len(tr));root=driver.JOB/'neural_trial_consistency_20261031'
+  # Select the old/new CNN mixture using genuine source-inner base forecasts.
+  # No re-splitting learned meta-features or claimed recursive meta-CV.
+  reverse=np.full(len(full['label']),-1,dtype=int);reverse[full['model_row_to_full_row']]=np.arange(len(d['label']))
+  gi=batches(d)[tr];go=batches(d)[va];source=dict(d);source['label']=np.full_like(d['label'],-1);source['diagnosis']=np.full_like(d['diagnosis'],-1);source['diagnosis'][tr]=d['diagnosis'][tr];selection_context,ex=fit_context(source,tr)
+  blind=dict(d);blind['label']=np.full_like(d['label'],-1);blind['diagnosis']=np.full_like(d['diagnosis'],-1);evx=context_features(blind,va,selection_context)
+  choices=[];newbanks={};scales={};source_y=d['label'][tr];original=ib[83].copy()
+  choices.append(dict(gamma=0.,alpha=0.,gate='constant',auc=float(roc_auc_score(source_y,original))))
+  for gamma in [.1,1.]:
+   zz=np.zeros(len(tr))
    for part in range(3):
-    with np.load(root/f'selected_fold{f["fold"]}_inner{part}.npz') as a:
-     good=reverse[a['validation']]>=0;rrr=reverse[a['validation'][good]];zi[[lookup[v] for v in rrr]]=logit(np.clip(a['probability'][good],1e-6,1-1e-6))
-   with np.load(root/f'selected_fold{f["fold"]}_outer.npz') as a:
+    with np.load(driver.JOB/f'neural_trial_consistency_20261031/gamma{gamma}_fold{f["fold"]}_inner{part}.npz') as a:
+     good=reverse[a['validation']]>=0;rrr=reverse[a['validation'][good]];zz[[lookup[v] for v in rrr]]=logit(np.clip(a['probability'][good],1e-6,1-1e-6))
+   scale=max(float(center(zz,gi).std()),.1);scales[gamma]=scale;newbanks[gamma]=postprocess(center(zz,gi)/scale,gi,'conditional',.6)
+   for gate in ['constant','clinical_soft']:
+    for alpha in [.25,.5,.75,1.]:
+     w=alpha*(np.ones(len(tr)) if gate=='constant' else ex[:,6]);q=(1-w)*original+w*newbanks[gamma]
+     choices.append(dict(gamma=gamma,alpha=alpha,gate=gate,auc=float(roc_auc_score(source_y,q))))
+  chosen=max(choices,key=lambda c:c['auc'])
+  # Fixed guard against replacing a source forecast for a tiny selection gain.
+  if chosen['auc']<choices[0]['auc']+.001:chosen=choices[0]
+  gamma=chosen['gamma'];alpha=chosen['alpha'];tta_scales=[]
+  if gamma:
+   chosen_base=driver.JOB/f'neural_trial_consistency_20261031/selected_fold{f["fold"]}_outer'
+   prior=json.loads((driver.JOB/f'neural_trial_consistency_20261031/fold{f["fold"]}_selection.json').read_text())['chosen_gamma']
+   if prior==gamma:path=chosen_base.with_suffix('.npz')
+   else:
+    path=OUT/f'gamma{gamma}_fold{f["fold"]}_outer.npz'
+    if not path.exists():
+     from neural_trial_consistency_20261031 import Inputs,fit
+     inputs=Inputs();dd=inputs.d;train_full=np.flatnonzero(np.isin(dd['subject'],f['training_subjects'])&inputs.eligible);valid_full=np.flatnonzero(np.isin(dd['subject'],f['validation_subjects']));q,error=fit(inputs,train_full,valid_full,gamma,OUT/f'gamma{gamma}_fold{f["fold"]}_outer.pt');np.savez_compressed(path,validation=valid_full,probability=q,reload_error=error)
+   with np.load(path) as a:
     good=reverse[a['validation']]>=0;assert np.array_equal(reverse[a['validation'][good]],va);zv=logit(np.clip(a['probability'][good],1e-6,1-1e-6))
-   gi=batches(d)[tr];go=batches(d)[va];scale=max(float(center(zi,gi).std()),.1);tta_scales.append(scale);ib[column]=postprocess(center(zi,gi)/scale,gi,'conditional',.6);ob[column]=postprocess(center(zv,go)/scale,go,'conditional',.6)
-  base=joblib.load(driver.JOB/f'pooled_weight_fusion_20261030/fold{f["fold"]}.joblib');sd=base['SPD_source_scale'];gin=batches(d)[tr];gout=batches(d)[va];ib=np.vstack([ib,postprocess(center(zin,gin)/sd,gin,'conditional',.6)]);ob=np.vstack([ob,postprocess(center(zout,gout)/sd,gout,'conditional',.6)]);source=dict(d);source['label']=np.full_like(d['label'],-1);source['diagnosis']=np.full_like(d['diagnosis'],-1);source['diagnosis'][tr]=d['diagnosis'][tr];context,e=fit_context(source,tr);blind=dict(d);blind['label']=np.full_like(d['label'],-1);blind['diagnosis']=np.full_like(d['diagnosis'],-1);ev=context_features(blind,va,context);base['scaler']=StandardScaler().fit(np.column_stack([features(ib,gin),e]));base['context']=context;base['consistency_neural_source_scales']=tta_scales;base['consistency_selected_gamma']=json.loads((driver.JOB/f'neural_trial_consistency_20261031/fold{f["fold"]}_selection.json').read_text())['chosen_gamma'];base['protocol']=spec;base.pop('models',None);xx=base['scaler'].transform(np.column_stack([features(ib,gin),e]));vv=base['scaler'].transform(np.column_stack([features(ob,gout),ev]));gx=np.column_stack([xx,.5*(2*e[:,6]-1)[:,None]*xx[:,[83,84,85,86]]]);gv=np.column_stack([vv,.5*(2*ev[:,6]-1)[:,None]*vv[:,[83,84,85,86]]]);initial=joblib.load(driver.JOB/f'pooled_posterior_rank_20261030/fold{f["fold"]}.joblib')['models']['pooled_posterior_pair'];y=d['label'][tr];rr=np.stack([np.flatnonzero(gin==g) for g in np.unique(gin)]);reg=1/(.01*len(y));people=np.unique(d['subject'][tr]);indices=[np.flatnonzero(d['subject'][tr]==s) for s in people];diag=np.array([d['diagnosis'][tr[ix[0]]] for ix in indices]);A=ASSIGNMENTS;mode=json.loads((driver.JOB/f'inner_calibration_20261028/fold{f["fold"]}_selection.json').read_text())['chosen'];models={};weight_records={}
+   newout=postprocess(center(zv,go)/scales[gamma],go,'conditional',.6);wi=alpha*(np.ones(len(tr)) if chosen['gate']=='constant' else ex[:,6]);wv=alpha*(np.ones(len(va)) if chosen['gate']=='constant' else evx[:,6]);ib[83]=(1-wi)*ib[83]+wi*newbanks[gamma];ob[83]=(1-wv)*ob[83]+wv*newout;tta_scales=[scales[gamma]]
+  driver.save(OUT/f'fold{f["fold"]}_selection.json',dict(chosen=chosen,candidates=choices,minimum_source_gain=.001,source_only=True))
+  print('ADAPTIVE CNN SOURCE SELECTION',f['fold'],chosen,flush=True)
+  base=joblib.load(driver.JOB/f'pooled_weight_fusion_20261030/fold{f["fold"]}.joblib');sd=base['SPD_source_scale'];gin=batches(d)[tr];gout=batches(d)[va];ib=np.vstack([ib,postprocess(center(zin,gin)/sd,gin,'conditional',.6)]);ob=np.vstack([ob,postprocess(center(zout,gout)/sd,gout,'conditional',.6)]);source=dict(d);source['label']=np.full_like(d['label'],-1);source['diagnosis']=np.full_like(d['diagnosis'],-1);source['diagnosis'][tr]=d['diagnosis'][tr];context,e=fit_context(source,tr);blind=dict(d);blind['label']=np.full_like(d['label'],-1);blind['diagnosis']=np.full_like(d['diagnosis'],-1);ev=context_features(blind,va,context);base['scaler']=StandardScaler().fit(np.column_stack([features(ib,gin),e]));base['context']=context;base['consistency_neural_source_scales']=tta_scales;base['consistency_selected_gamma']=gamma;base['adaptive_CNN_mix']=chosen;base['protocol']=spec;base.pop('models',None);xx=base['scaler'].transform(np.column_stack([features(ib,gin),e]));vv=base['scaler'].transform(np.column_stack([features(ob,gout),ev]));gx=np.column_stack([xx,.5*(2*e[:,6]-1)[:,None]*xx[:,[83,84,85,86]]]);gv=np.column_stack([vv,.5*(2*ev[:,6]-1)[:,None]*vv[:,[83,84,85,86]]]);initial=joblib.load(driver.JOB/f'pooled_posterior_rank_20261030/fold{f["fold"]}.joblib')['models']['pooled_posterior_pair'];y=d['label'][tr];rr=np.stack([np.flatnonzero(gin==g) for g in np.unique(gin)]);reg=1/(.01*len(y));people=np.unique(d['subject'][tr]);indices=[np.flatnonzero(d['subject'][tr]==s) for s in people];diag=np.array([d['diagnosis'][tr[ix[0]]] for ix in indices]);A=ASSIGNMENTS;mode=json.loads((driver.JOB/f'inner_calibration_20261028/fold{f["fold"]}_selection.json').read_text())['chosen'];models={};weight_records={}
   def fit_head(roww):
    wn=roww/roww.sum();gw=roww[rr].mean(1);gw/=gw.sum();positive=np.flatnonzero(y==1);negative=np.flatnonzero(y==0);pairw=wn[positive,None]*wn[negative][None];pairw/=pairw.sum()
    def obj(theta):
@@ -75,24 +100,24 @@ def main():
      else:chosen=rng.choice(pool,max(2,int(round(.8*len(pool)))),replace=False);counts=np.zeros(len(people));counts[chosen]=len(pool)/len(chosen)
      for k in pool:w[indices[k]]=counts[k]
     assert np.isclose(w.sum(),len(y));weights.append(w)
-   with ThreadPoolExecutor(max_workers=1) as executor:thetas=np.array(list(executor.map(fit_head,weights)))
+   with ThreadPoolExecutor(max_workers=2) as executor:thetas=np.array(list(executor.map(fit_head,weights)))
    models[method]=thetas;weight_records[method]=np.array(weights);raw=np.mean([expit(gv@t[:-1]+t[-1]) for t in thetas],axis=0);group=np.mean([postprocess(gv@t[:-1]+t[-1],gout,'conditional',1.) for t in thetas],axis=0)
    for agg,q in [('rawmean',raw),('groupmean',group)]:
     name=method+'_'+agg;out[name][full['model_row_to_full_row'][va]]=np.round(q,12);out[name+'_calibrated'][full['model_row_to_full_row'][va]]=np.round(q if agg=='groupmean' else calibrate(q,gout,mode),12)
-   print('NEURAL CONSISTENCY FUSION',f['fold'],method,'16complete',flush=True)
+   print('ADAPTIVE CNN MIX',f['fold'],method,'16complete',flush=True)
   path=OUT/f'fold{f["fold"]}.joblib';joblib.dump(dict(models=models,weights=weight_records,base_artifact=base,context=context,source_subjects=f['training_subjects'],protocol=spec),path,compress=3);saved=joblib.load(path);per=np.random.default_rng(f['fold']).permutation(len(va))
   for method,thetas in models.items():
    assert np.array_equal(saved['models'][method],thetas);a=np.mean([postprocess(gv@t[:-1]+t[-1],gout,'conditional',1.) for t in thetas],axis=0);r=np.mean([postprocess(gv[per]@t[:-1]+t[-1],np.char.add('opaque_',gout[per]),'conditional',1.) for t in saved['models'][method]],axis=0);error=float(abs(r-a[per]).max());assert error<1e-9;audits.append(dict(fold=f['fold'],method=method,native_opaque_order_delta=error))
-  print('NEURAL CONSISTENCY FUSION OUTER',f['fold'],'/5',flush=True)
+  print('ADAPTIVE CNN MIX OUTER',f['fold'],'/5',flush=True)
  y=full['label'];g=full['subject'];dep=full['diagnosis']==1;ids=np.unique(g);ref=pair_matrix(y,anchor,g,ids);rng=np.random.default_rng(1030);counts=np.zeros((2000,len(ids)))
  for j in range(len(counts)):
   for mask in [np.char.startswith(ids,'DEP'),np.char.startswith(ids,'HC')]:
    ix=np.flatnonzero(mask);counts[j]+=np.bincount(rng.choice(ix,len(ix),replace=True),minlength=len(ids))
- counts*=np.where(np.char.startswith(ids,'DEP'),2.,1.)[None,:]
+ # Primary bootstrap uses original unweighted pooled AUC.
  results={}
  for name,q in out.items():
   delta=pair_matrix(y,q,g,ids)-ref;boot=np.einsum('bi,ij,bj->b',counts,delta,counts,optimize=True)/counts.sum(1)**2;results[name]=dict(pooled_auc=float(roc_auc_score(y,q)),equal_clinical_mass_pooled_auc=float(roc_auc_score(y,q,sample_weight=np.where(dep,2.,1.))),DEP_auc=float(roc_auc_score(y[dep],q[dep])),paired_person_delta_95CI=np.quantile(boot,[.025,.975]).tolist());np.savez_compressed(OUT/(name+'_oof.npz'),labels=y,subjects=g,probability=q)
- driver.save(OUT/'summary.json',dict(results=results,anchor_auc=float(roc_auc_score(y,anchor)),anchor_equal_clinical_mass_pooled_auc=float(roc_auc_score(y,anchor,sample_weight=np.where(dep,2.,1.))),paired_person_interval_metric='equal_clinical_mass_pooled_auc',baseline_preserved=True,cohort_reused=True,multiple_search_uncorrected=True,official_score_unknown=True));driver.save(OUT/'verification.json',dict(checks_passed=True,all5outer_complete=True,source_only_patient_resampling=True,no_out_of_bag_validation_claimed=True,calibration_policy_inherited=True,audits=audits,holdout_and_official_not_read=True,submissions_performed=False));print('NEURAL CONSISTENCY FUSION COMPLETE',json.dumps(results),flush=True)
+ driver.save(OUT/'summary.json',dict(results=results,anchor_auc=float(roc_auc_score(y,anchor)),anchor_equal_clinical_mass_pooled_auc=float(roc_auc_score(y,anchor,sample_weight=np.where(dep,2.,1.))),paired_person_interval_metric='unweighted_pooled_auc',baseline_preserved=True,cohort_reused=True,multiple_search_uncorrected=True,official_score_unknown=True));driver.save(OUT/'verification.json',dict(checks_passed=True,all5outer_complete=True,source_only_patient_resampling=True,no_out_of_bag_validation_claimed=True,calibration_policy_inherited=True,audits=audits,holdout_and_official_not_read=True,submissions_performed=False));print('ADAPTIVE CNN MIX COMPLETE',json.dumps(results),flush=True)
 if __name__=='__main__':
  try:main()
  except BaseException:driver.save(OUT/'failure.json',dict(traceback=traceback.format_exc()));raise

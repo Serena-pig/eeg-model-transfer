@@ -1,0 +1,114 @@
+{
+  "chosen": {
+    "gamma": 1.0,
+    "alpha": 0.75,
+    "gate": "constant",
+    "auc": 0.7712211407876867
+  },
+  "candidates": [
+    {
+      "gamma": 0.0,
+      "alpha": 0.0,
+      "gate": "constant",
+      "auc": 0.7575373472159347
+    },
+    {
+      "gamma": 0.1,
+      "alpha": 0.25,
+      "gate": "constant",
+      "auc": 0.7596423721140788
+    },
+    {
+      "gamma": 0.1,
+      "alpha": 0.5,
+      "gate": "constant",
+      "auc": 0.7606077410593028
+    },
+    {
+      "gamma": 0.1,
+      "alpha": 0.75,
+      "gate": "constant",
+      "auc": 0.7605636034404708
+    },
+    {
+      "gamma": 0.1,
+      "alpha": 1.0,
+      "gate": "constant",
+      "auc": 0.7598042100497963
+    },
+    {
+      "gamma": 0.1,
+      "alpha": 0.25,
+      "gate": "clinical_soft",
+      "auc": 0.75882752376641
+    },
+    {
+      "gamma": 0.1,
+      "alpha": 0.5,
+      "gate": "clinical_soft",
+      "auc": 0.759643503847895
+    },
+    {
+      "gamma": 0.1,
+      "alpha": 0.75,
+      "gate": "clinical_soft",
+      "auc": 0.7602229515617926
+    },
+    {
+      "gamma": 0.1,
+      "alpha": 1.0,
+      "gate": "clinical_soft",
+      "auc": 0.7606813037573563
+    },
+    {
+      "gamma": 1.0,
+      "alpha": 0.25,
+      "gate": "constant",
+      "auc": 0.7652772747849705
+    },
+    {
+      "gamma": 1.0,
+      "alpha": 0.5,
+      "gate": "constant",
+      "auc": 0.7698076052512449
+    },
+    {
+      "gamma": 1.0,
+      "alpha": 0.75,
+      "gate": "constant",
+      "auc": 0.7712211407876867
+    },
+    {
+      "gamma": 1.0,
+      "alpha": 1.0,
+      "gate": "constant",
+      "auc": 0.769605024898144
+    },
+    {
+      "gamma": 1.0,
+      "alpha": 0.25,
+      "gate": "clinical_soft",
+      "auc": 0.7620529651425986
+    },
+    {
+      "gamma": 1.0,
+      "alpha": 0.5,
+      "gate": "clinical_soft",
+      "auc": 0.7655115436849254
+    },
+    {
+      "gamma": 1.0,
+      "alpha": 0.75,
+      "gate": "clinical_soft",
+      "auc": 0.7680160706201902
+    },
+    {
+      "gamma": 1.0,
+      "alpha": 1.0,
+      "gate": "clinical_soft",
+      "auc": 0.7698313716613853
+    }
+  ],
+  "minimum_source_gain": 0.001,
+  "source_only": true
+}
