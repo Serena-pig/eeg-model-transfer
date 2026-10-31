@@ -1,0 +1,22 @@
+{
+  "check": "independent native fusion-head reload on cached outer base forecasts",
+  "full_raw_base_replay": false,
+  "errors": [
+    4.986011603591578e-13,
+    4.99711383383783e-13,
+    4.997668945350142e-13,
+    4.962037725153579e-13,
+    4.993228053251642e-13
+  ],
+  "head_sha256": {
+    "fold1.joblib": "c0997f4f511906e61d648de67bf9ae1c96d8236bde83f608a4c93c191103883a",
+    "fold2.joblib": "3bb123b64a73b0be2841070f10a7fb30519b6a7221e67709bd5762d79bfc9a88",
+    "fold3.joblib": "81ae044e13a66a9b1102d158476e211b4a0e4a67d4cb626ba6e86cf1c572a8ba",
+    "fold4.joblib": "7e42897c5d2caaa6d25154b6bca72f450a3b5d4baa3096190e65f2e58e218fcc",
+    "fold5.joblib": "f3b1c3b4ab177c4832fec2a0d7db4f9ef4fe80076033732087c7b06111fe3cd9"
+  },
+  "baseline_workbook_unchanged": true,
+  "official_feedback_baseline": 88.13,
+  "public_inputs_not_read": true,
+  "submissions_performed": false
+}
