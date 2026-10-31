@@ -1,0 +1,26 @@
+{
+  "configs": [
+    {
+      "kind": "linear",
+      "C": 0.3
+    },
+    {
+      "kind": "linear",
+      "C": 3.0
+    },
+    {
+      "kind": "linear",
+      "C": 30.0
+    }
+  ],
+  "features": "centered6band powers+local2s variability+aligned covariance diagonal",
+  "pair_labels": "Within source patient/crop positive-minus-neutral, both orientations",
+  "antisymmetry": "odd sine features and zero intercept; p(i>j)+p(j>i)=1",
+  "inference": "mean predicted wins against other7trials; no query labels",
+  "primary_metric": "unweighted_pooled_auc",
+  "selection": "max pooled3sourceinner AUC, require .001 over old graph else fallback",
+  "seed": 110181,
+  "public_data_used": false,
+  "holdout_used": false,
+  "script_sha256": "d7f1e0cfe6657e2dce03a842fcccf6e8d09bbe378fab5f86c13bce762ba720cc"
+}

@@ -1,0 +1,27 @@
+{
+  "fold": 5,
+  "chosen": {
+    "kind": "linear",
+    "C": 0.3
+  },
+  "old_graph_source_auc": 0.7701757812500001,
+  "source_candidate_auc": [
+    0.7893749999999999,
+    0.7691796875000001,
+    0.7444759114583335
+  ],
+  "configs": [
+    {
+      "kind": "linear",
+      "C": 0.3
+    },
+    {
+      "kind": "linear",
+      "C": 3.0
+    },
+    {
+      "kind": "linear",
+      "C": 30.0
+    }
+  ]
+}

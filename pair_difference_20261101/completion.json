@@ -1,0 +1,238 @@
+{
+  "selections": [
+    {
+      "fold": 1,
+      "chosen": {
+        "kind": "linear",
+        "C": 0.3
+      },
+      "old_graph_source_auc": 0.7845106336805555,
+      "source_candidate_auc": [
+        0.7884700520833333,
+        0.7947254774305555,
+        0.7777126736111112,
+        0.7885286458333334,
+        0.7490440538194445,
+        0.7481662326388889
+      ],
+      "configs": [
+        {
+          "kind": "linear",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "C": 0.3
+        },
+        {
+          "kind": "odd_rff",
+          "gamma": 0.25,
+          "C": 0.03
+        },
+        {
+          "kind": "odd_rff",
+          "gamma": 0.25,
+          "C": 0.3
+        },
+        {
+          "kind": "odd_rff",
+          "gamma": 1.0,
+          "C": 0.03
+        },
+        {
+          "kind": "odd_rff",
+          "gamma": 1.0,
+          "C": 0.3
+        }
+      ]
+    },
+    {
+      "fold": 2,
+      "chosen": {
+        "kind": "linear",
+        "C": 0.3
+      },
+      "old_graph_source_auc": 0.7516351996527779,
+      "source_candidate_auc": [
+        0.7716948784722222,
+        0.7783420138888889,
+        0.7580349392361112,
+        0.7738975694444444,
+        0.7307291666666668,
+        0.7293109809027778
+      ],
+      "configs": [
+        {
+          "kind": "linear",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "C": 0.3
+        },
+        {
+          "kind": "odd_rff",
+          "gamma": 0.25,
+          "C": 0.03
+        },
+        {
+          "kind": "odd_rff",
+          "gamma": 0.25,
+          "C": 0.3
+        },
+        {
+          "kind": "odd_rff",
+          "gamma": 1.0,
+          "C": 0.03
+        },
+        {
+          "kind": "odd_rff",
+          "gamma": 1.0,
+          "C": 0.3
+        }
+      ]
+    },
+    {
+      "fold": 3,
+      "chosen": {
+        "kind": "linear",
+        "C": 0.3
+      },
+      "old_graph_source_auc": 0.754873046875,
+      "source_candidate_auc": [
+        0.7835221354166666,
+        0.7882085503472223,
+        0.7629893663194445,
+        0.7761100260416666,
+        0.727937282986111,
+        0.7341655815972222
+      ],
+      "configs": [
+        {
+          "kind": "linear",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "C": 0.3
+        },
+        {
+          "kind": "odd_rff",
+          "gamma": 0.25,
+          "C": 0.03
+        },
+        {
+          "kind": "odd_rff",
+          "gamma": 0.25,
+          "C": 0.3
+        },
+        {
+          "kind": "odd_rff",
+          "gamma": 1.0,
+          "C": 0.03
+        },
+        {
+          "kind": "odd_rff",
+          "gamma": 1.0,
+          "C": 0.3
+        }
+      ]
+    },
+    {
+      "fold": 4,
+      "chosen": {
+        "kind": "linear",
+        "C": 0.3
+      },
+      "old_graph_source_auc": 0.7720388454861111,
+      "source_candidate_auc": [
+        0.7875694444444444,
+        0.795256076388889,
+        0.7713747829861111,
+        0.7904904513888888,
+        0.733203125,
+        0.7407660590277778
+      ],
+      "configs": [
+        {
+          "kind": "linear",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "C": 0.3
+        },
+        {
+          "kind": "odd_rff",
+          "gamma": 0.25,
+          "C": 0.03
+        },
+        {
+          "kind": "odd_rff",
+          "gamma": 0.25,
+          "C": 0.3
+        },
+        {
+          "kind": "odd_rff",
+          "gamma": 1.0,
+          "C": 0.03
+        },
+        {
+          "kind": "odd_rff",
+          "gamma": 1.0,
+          "C": 0.3
+        }
+      ]
+    },
+    {
+      "fold": 5,
+      "chosen": {
+        "kind": "linear",
+        "C": 0.3
+      },
+      "old_graph_source_auc": 0.7701757812500001,
+      "source_candidate_auc": [
+        0.7813498263888887,
+        0.7893749999999999,
+        0.7669574652777778,
+        0.7768869357638889,
+        0.7262749565972222,
+        0.713894314236111
+      ],
+      "configs": [
+        {
+          "kind": "linear",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "C": 0.3
+        },
+        {
+          "kind": "odd_rff",
+          "gamma": 0.25,
+          "C": 0.03
+        },
+        {
+          "kind": "odd_rff",
+          "gamma": 0.25,
+          "C": 0.3
+        },
+        {
+          "kind": "odd_rff",
+          "gamma": 1.0,
+          "C": 0.03
+        },
+        {
+          "kind": "odd_rff",
+          "gamma": 1.0,
+          "C": 0.3
+        }
+      ]
+    }
+  ],
+  "all5outer3inner_complete": true,
+  "public_data_used": false,
+  "holdout_used": false,
+  "official_submissions": 0
+}
