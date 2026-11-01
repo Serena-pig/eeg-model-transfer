@@ -1,0 +1,196 @@
+{
+  "configs": [
+    {
+      "kind": "linear",
+      "view": "center",
+      "C": 0.03
+    },
+    {
+      "kind": "linear",
+      "view": "center",
+      "C": 0.3
+    },
+    {
+      "kind": "linear",
+      "view": "center",
+      "C": 3.0
+    },
+    {
+      "kind": "linear",
+      "view": "within8_z",
+      "C": 0.03
+    },
+    {
+      "kind": "linear",
+      "view": "within8_z",
+      "C": 0.3
+    },
+    {
+      "kind": "linear",
+      "view": "within8_z",
+      "C": 3.0
+    },
+    {
+      "kind": "linear",
+      "view": "within8_rank",
+      "C": 0.03
+    },
+    {
+      "kind": "linear",
+      "view": "within8_rank",
+      "C": 0.3
+    },
+    {
+      "kind": "linear",
+      "view": "within8_rank",
+      "C": 3.0
+    },
+    {
+      "kind": "linear",
+      "view": "relative",
+      "C": 0.03
+    },
+    {
+      "kind": "linear",
+      "view": "relative",
+      "C": 0.3
+    },
+    {
+      "kind": "linear",
+      "view": "relative",
+      "C": 3.0
+    },
+    {
+      "kind": "linear",
+      "view": "regional",
+      "C": 0.03
+    },
+    {
+      "kind": "linear",
+      "view": "regional",
+      "C": 0.3
+    },
+    {
+      "kind": "linear",
+      "view": "regional",
+      "C": 3.0
+    },
+    {
+      "kind": "linear",
+      "view": "spatial",
+      "C": 0.03
+    },
+    {
+      "kind": "linear",
+      "view": "spatial",
+      "C": 0.3
+    },
+    {
+      "kind": "linear",
+      "view": "spatial",
+      "C": 3.0
+    }
+  ],
+  "region_index_groups": [
+    [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    [
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    [
+      12,
+      16,
+      17,
+      21,
+      22,
+      26
+    ],
+    [
+      13,
+      14,
+      15,
+      18,
+      19,
+      20
+    ],
+    [
+      23,
+      24,
+      25
+    ],
+    [
+      27,
+      28,
+      29
+    ]
+  ],
+  "left_right_pairs": [
+    [
+      0,
+      1
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      7,
+      11
+    ],
+    [
+      8,
+      10
+    ],
+    [
+      12,
+      16
+    ],
+    [
+      13,
+      15
+    ],
+    [
+      17,
+      21
+    ],
+    [
+      18,
+      20
+    ],
+    [
+      22,
+      26
+    ],
+    [
+      23,
+      25
+    ],
+    [
+      27,
+      29
+    ]
+  ],
+  "region_order_note": "Project existing CHANNELS ordering assumption; pooled features, not physiological causal claims",
+  "selection": "max pooled source3inner AUC; require .001 over existing pair comparator else old_pair",
+  "primary_metric": "unweighted_pooled_auc",
+  "source_scaler_only": true,
+  "query_group_transform": "own8records; average tied ranks; no labels",
+  "public_training": false,
+  "holdout_used": false,
+  "script_sha256": "c0421d86d09f62b680aca176ad8321fa55c02ca4b6a0275eeae1a69a3a230ab0"
+}

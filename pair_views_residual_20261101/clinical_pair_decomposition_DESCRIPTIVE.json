@@ -1,0 +1,14 @@
+{
+  "old_candidate": {
+    "0_positive_vs_0_neutral": 0.88345625,
+    "0_positive_vs_1_neutral": 0.833365625,
+    "1_positive_vs_0_neutral": 0.83713125,
+    "1_positive_vs_1_neutral": 0.76135
+  },
+  "residual": {
+    "0_positive_vs_0_neutral": 0.8817703125,
+    "0_positive_vs_1_neutral": 0.83229375,
+    "1_positive_vs_0_neutral": 0.83765,
+    "1_positive_vs_1_neutral": 0.76329375
+  }
+}

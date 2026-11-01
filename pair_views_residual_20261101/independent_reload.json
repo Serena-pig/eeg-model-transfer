@@ -1,0 +1,13 @@
+{
+  "errors": [
+    5.301314942585122e-13,
+    5.306310946195936e-13,
+    5.316302953417562e-13,
+    5.404565683875262e-13,
+    5.443978601249455e-13
+  ],
+  "query_labels_and_diagnoses_masked": true,
+  "old_base_forecasts_cached": true,
+  "public_training": false,
+  "official_submissions": 0
+}

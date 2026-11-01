@@ -1,0 +1,121 @@
+{
+  "fold": 4,
+  "chosen": {
+    "kind": "linear",
+    "view": "relative",
+    "C": 0.3
+  },
+  "existing_pair_source_auc": 0.795256076388889,
+  "source_candidate_auc": [
+    0.7875694444444444,
+    0.795256076388889,
+    0.7676399739583333,
+    0.7923133680555556,
+    0.8010796440972222,
+    0.7692979600694444,
+    0.7875108506944444,
+    0.7933018663194444,
+    0.7539019097222223,
+    0.7969867621527779,
+    0.8068033854166667,
+    0.77662109375,
+    0.7702973090277777,
+    0.7586512586805556,
+    0.7397200520833334,
+    0.7819086371527778,
+    0.7701030815972223,
+    0.7320475260416668
+  ],
+  "configs": [
+    {
+      "kind": "linear",
+      "view": "center",
+      "C": 0.03
+    },
+    {
+      "kind": "linear",
+      "view": "center",
+      "C": 0.3
+    },
+    {
+      "kind": "linear",
+      "view": "center",
+      "C": 3.0
+    },
+    {
+      "kind": "linear",
+      "view": "within8_z",
+      "C": 0.03
+    },
+    {
+      "kind": "linear",
+      "view": "within8_z",
+      "C": 0.3
+    },
+    {
+      "kind": "linear",
+      "view": "within8_z",
+      "C": 3.0
+    },
+    {
+      "kind": "linear",
+      "view": "within8_rank",
+      "C": 0.03
+    },
+    {
+      "kind": "linear",
+      "view": "within8_rank",
+      "C": 0.3
+    },
+    {
+      "kind": "linear",
+      "view": "within8_rank",
+      "C": 3.0
+    },
+    {
+      "kind": "linear",
+      "view": "relative",
+      "C": 0.03
+    },
+    {
+      "kind": "linear",
+      "view": "relative",
+      "C": 0.3
+    },
+    {
+      "kind": "linear",
+      "view": "relative",
+      "C": 3.0
+    },
+    {
+      "kind": "linear",
+      "view": "regional",
+      "C": 0.03
+    },
+    {
+      "kind": "linear",
+      "view": "regional",
+      "C": 0.3
+    },
+    {
+      "kind": "linear",
+      "view": "regional",
+      "C": 3.0
+    },
+    {
+      "kind": "linear",
+      "view": "spatial",
+      "C": 0.03
+    },
+    {
+      "kind": "linear",
+      "view": "spatial",
+      "C": 0.3
+    },
+    {
+      "kind": "linear",
+      "view": "spatial",
+      "C": 3.0
+    }
+  ]
+}

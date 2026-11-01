@@ -1,64 +1,202 @@
 {
-  "primary_metric": "unweighted pooled ROC AUC on unchanged60people2400records",
-  "original_baseline_auc": 0.8482006944444445,
-  "previous_high_auc": 0.8484173611111112,
-  "new_comparator_candidate": {
-    "primary_pooled_auc": 0.8484631944444445,
-    "previous_exploratory_high_auc": 0.8484173611111112,
-    "delta": 4.583333333330053e-05,
+  "primary_metric": "unweighted pooled ROC AUC, unchanged60people2400records",
+  "reference_auc": 0.8484631944444445,
+  "append_feature_view": {
+    "primary_pooled_auc": 0.8479291666666666,
+    "reference_auc": 0.8484631944444445,
+    "delta": -0.0005340277777778901,
     "paired_person_delta95CI": [
-      -0.00033057291666666467,
-      0.00044795138888889004
+      -0.0010125173611111105,
+      -6.663194444444522e-05
+    ],
+    "cohort_reused": true,
+    "independent_confirmation": false
+  },
+  "replace_comparator": {
+    "primary_pooled_auc": 0.8477902777777777,
+    "reference_auc": 0.8484631944444445,
+    "delta": -0.0006729166666668007,
+    "paired_person_delta95CI": [
+      -0.0012437500000000003,
+      -9.232638888889e-05
+    ],
+    "cohort_reused": true,
+    "independent_confirmation": false
+  },
+  "fixed_teacher_residual": {
+    "primary_pooled_auc": 0.8478069444444445,
+    "baseline_pooled_auc": 0.8484631944444445,
+    "DEP_auc": 0.76329375,
+    "paired_person_delta_95CI": [
+      -0.0020689236111111117,
+      0.0008917013888888866
+    ],
+    "folds": [
+      {
+        "fold": 1,
+        "beta": [
+          0.12125220967817761,
+          -0.00040436877560786087
+        ],
+        "reload_error": 0.0
+      },
+      {
+        "fold": 2,
+        "beta": [
+          0.06637949345011296,
+          0.012574322621032849
+        ],
+        "reload_error": 0.0
+      },
+      {
+        "fold": 3,
+        "beta": [
+          0.157726378231776,
+          -0.012730329708220094
+        ],
+        "reload_error": 0.0
+      },
+      {
+        "fold": 4,
+        "beta": [
+          0.16647626870701085,
+          0.012144957431574989
+        ],
+        "reload_error": 0.0
+      },
+      {
+        "fold": 5,
+        "beta": [
+          0.11384812113939406,
+          -0.0056870232385430475
+        ],
+        "reload_error": 0.0
+      }
     ],
     "cohort_reused": true,
     "independent_confirmation": false,
-    "promotion": false
+    "baseline_preserved": true,
+    "official_submission": false
   },
-  "set_all_folds_rejected": true,
-  "pair_configs": [
+  "source_choices": [
     {
       "fold": 1,
       "chosen": {
         "kind": "linear",
+        "view": "within8_z",
         "C": 0.3
       },
-      "old_graph_source_auc": 0.7845106336805555,
+      "existing_pair_source_auc": 0.7947254774305555,
       "source_candidate_auc": [
         0.7884700520833333,
         0.7947254774305555,
-        0.7777126736111112,
-        0.7885286458333334,
-        0.7490440538194445,
-        0.7481662326388889
+        0.7761740451388889,
+        0.7956401909722223,
+        0.8065158420138889,
+        0.7816232638888889,
+        0.7877539062500001,
+        0.7964887152777778,
+        0.7703526475694444,
+        0.7967751736111112,
+        0.8063292100694445,
+        0.7878559027777778,
+        0.7670421006944445,
+        0.7538313802083334,
+        0.7290277777777777,
+        0.7852452256944444,
+        0.7830186631944444,
+        0.7521050347222222
       ],
       "configs": [
         {
           "kind": "linear",
+          "view": "center",
           "C": 0.03
         },
         {
           "kind": "linear",
+          "view": "center",
           "C": 0.3
         },
         {
-          "kind": "odd_rff",
-          "gamma": 0.25,
+          "kind": "linear",
+          "view": "center",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "within8_z",
           "C": 0.03
         },
         {
-          "kind": "odd_rff",
-          "gamma": 0.25,
+          "kind": "linear",
+          "view": "within8_z",
           "C": 0.3
         },
         {
-          "kind": "odd_rff",
-          "gamma": 1.0,
+          "kind": "linear",
+          "view": "within8_z",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
           "C": 0.03
         },
         {
-          "kind": "odd_rff",
-          "gamma": 1.0,
+          "kind": "linear",
+          "view": "within8_rank",
           "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 3.0
         }
       ]
     },
@@ -66,45 +204,120 @@
       "fold": 2,
       "chosen": {
         "kind": "linear",
+        "view": "relative",
         "C": 0.3
       },
-      "old_graph_source_auc": 0.7516351996527779,
+      "existing_pair_source_auc": 0.7783420138888889,
       "source_candidate_auc": [
         0.7716948784722222,
         0.7783420138888889,
-        0.7580349392361112,
-        0.7738975694444444,
-        0.7307291666666668,
-        0.7293109809027778
+        0.7533279079861112,
+        0.7766666666666666,
+        0.7794032118055556,
+        0.7461631944444445,
+        0.7739952256944445,
+        0.7730631510416667,
+        0.7278135850694445,
+        0.7815527343750001,
+        0.7909505208333334,
+        0.7623784722222222,
+        0.7522287326388888,
+        0.7400271267361112,
+        0.7205078125,
+        0.7712565104166667,
+        0.7632063802083333,
+        0.7248415798611112
       ],
       "configs": [
         {
           "kind": "linear",
+          "view": "center",
           "C": 0.03
         },
         {
           "kind": "linear",
+          "view": "center",
           "C": 0.3
         },
         {
-          "kind": "odd_rff",
-          "gamma": 0.25,
+          "kind": "linear",
+          "view": "center",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "within8_z",
           "C": 0.03
         },
         {
-          "kind": "odd_rff",
-          "gamma": 0.25,
+          "kind": "linear",
+          "view": "within8_z",
           "C": 0.3
         },
         {
-          "kind": "odd_rff",
-          "gamma": 1.0,
+          "kind": "linear",
+          "view": "within8_z",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
           "C": 0.03
         },
         {
-          "kind": "odd_rff",
-          "gamma": 1.0,
+          "kind": "linear",
+          "view": "within8_rank",
           "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 3.0
         }
       ]
     },
@@ -112,45 +325,120 @@
       "fold": 3,
       "chosen": {
         "kind": "linear",
+        "view": "relative",
         "C": 0.3
       },
-      "old_graph_source_auc": 0.754873046875,
+      "existing_pair_source_auc": 0.7882085503472223,
       "source_candidate_auc": [
         0.7835221354166666,
         0.7882085503472223,
-        0.7629893663194445,
-        0.7761100260416666,
-        0.727937282986111,
-        0.7341655815972222
+        0.7567957899305555,
+        0.7862597656249999,
+        0.7932020399305555,
+        0.7553645833333333,
+        0.779958767361111,
+        0.7834711371527777,
+        0.7433355034722222,
+        0.7931651475694445,
+        0.8021343315972222,
+        0.7726844618055555,
+        0.7644878472222223,
+        0.759638671875,
+        0.7374685329861113,
+        0.780869140625,
+        0.7649273003472223,
+        0.7322460937499999
       ],
       "configs": [
         {
           "kind": "linear",
+          "view": "center",
           "C": 0.03
         },
         {
           "kind": "linear",
+          "view": "center",
           "C": 0.3
         },
         {
-          "kind": "odd_rff",
-          "gamma": 0.25,
+          "kind": "linear",
+          "view": "center",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "within8_z",
           "C": 0.03
         },
         {
-          "kind": "odd_rff",
-          "gamma": 0.25,
+          "kind": "linear",
+          "view": "within8_z",
           "C": 0.3
         },
         {
-          "kind": "odd_rff",
-          "gamma": 1.0,
+          "kind": "linear",
+          "view": "within8_z",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
           "C": 0.03
         },
         {
-          "kind": "odd_rff",
-          "gamma": 1.0,
+          "kind": "linear",
+          "view": "within8_rank",
           "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 3.0
         }
       ]
     },
@@ -158,45 +446,120 @@
       "fold": 4,
       "chosen": {
         "kind": "linear",
+        "view": "relative",
         "C": 0.3
       },
-      "old_graph_source_auc": 0.7720388454861111,
+      "existing_pair_source_auc": 0.795256076388889,
       "source_candidate_auc": [
         0.7875694444444444,
         0.795256076388889,
-        0.7713747829861111,
-        0.7904904513888888,
-        0.733203125,
-        0.7407660590277778
+        0.7676399739583333,
+        0.7923133680555556,
+        0.8010796440972222,
+        0.7692979600694444,
+        0.7875108506944444,
+        0.7933018663194444,
+        0.7539019097222223,
+        0.7969867621527779,
+        0.8068033854166667,
+        0.77662109375,
+        0.7702973090277777,
+        0.7586512586805556,
+        0.7397200520833334,
+        0.7819086371527778,
+        0.7701030815972223,
+        0.7320475260416668
       ],
       "configs": [
         {
           "kind": "linear",
+          "view": "center",
           "C": 0.03
         },
         {
           "kind": "linear",
+          "view": "center",
           "C": 0.3
         },
         {
-          "kind": "odd_rff",
-          "gamma": 0.25,
+          "kind": "linear",
+          "view": "center",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "within8_z",
           "C": 0.03
         },
         {
-          "kind": "odd_rff",
-          "gamma": 0.25,
+          "kind": "linear",
+          "view": "within8_z",
           "C": 0.3
         },
         {
-          "kind": "odd_rff",
-          "gamma": 1.0,
+          "kind": "linear",
+          "view": "within8_z",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
           "C": 0.03
         },
         {
-          "kind": "odd_rff",
-          "gamma": 1.0,
+          "kind": "linear",
+          "view": "within8_rank",
           "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 3.0
         }
       ]
     },
@@ -204,195 +567,130 @@
       "fold": 5,
       "chosen": {
         "kind": "linear",
+        "view": "within8_z",
         "C": 0.3
       },
-      "old_graph_source_auc": 0.7701757812500001,
+      "existing_pair_source_auc": 0.7893749999999999,
       "source_candidate_auc": [
         0.7813498263888887,
         0.7893749999999999,
-        0.7669574652777778,
-        0.7768869357638889,
-        0.7262749565972222,
-        0.713894314236111
-      ],
-      "configs": [
-        {
-          "kind": "linear",
-          "C": 0.03
-        },
-        {
-          "kind": "linear",
-          "C": 0.3
-        },
-        {
-          "kind": "odd_rff",
-          "gamma": 0.25,
-          "C": 0.03
-        },
-        {
-          "kind": "odd_rff",
-          "gamma": 0.25,
-          "C": 0.3
-        },
-        {
-          "kind": "odd_rff",
-          "gamma": 1.0,
-          "C": 0.03
-        },
-        {
-          "kind": "odd_rff",
-          "gamma": 1.0,
-          "C": 0.3
-        }
-      ]
-    }
-  ],
-  "expanded_linear_configs": [
-    {
-      "fold": 1,
-      "chosen": {
-        "kind": "linear",
-        "C": 0.3
-      },
-      "old_graph_source_auc": 0.7845106336805555,
-      "source_candidate_auc": [
-        0.7947254774305555,
-        0.7761740451388889,
-        0.7419542100694443
-      ],
-      "configs": [
-        {
-          "kind": "linear",
-          "C": 0.3
-        },
-        {
-          "kind": "linear",
-          "C": 3.0
-        },
-        {
-          "kind": "linear",
-          "C": 30.0
-        }
-      ]
-    },
-    {
-      "fold": 2,
-      "chosen": {
-        "kind": "linear",
-        "C": 0.3
-      },
-      "old_graph_source_auc": 0.7516351996527779,
-      "source_candidate_auc": [
-        0.7783420138888889,
-        0.7533279079861112,
-        0.7212456597222223
-      ],
-      "configs": [
-        {
-          "kind": "linear",
-          "C": 0.3
-        },
-        {
-          "kind": "linear",
-          "C": 3.0
-        },
-        {
-          "kind": "linear",
-          "C": 30.0
-        }
-      ]
-    },
-    {
-      "fold": 3,
-      "chosen": {
-        "kind": "linear",
-        "C": 0.3
-      },
-      "old_graph_source_auc": 0.754873046875,
-      "source_candidate_auc": [
-        0.7882085503472223,
-        0.7567957899305555,
-        0.7282855902777777
-      ],
-      "configs": [
-        {
-          "kind": "linear",
-          "C": 0.3
-        },
-        {
-          "kind": "linear",
-          "C": 3.0
-        },
-        {
-          "kind": "linear",
-          "C": 30.0
-        }
-      ]
-    },
-    {
-      "fold": 4,
-      "chosen": {
-        "kind": "linear",
-        "C": 0.3
-      },
-      "old_graph_source_auc": 0.7720388454861111,
-      "source_candidate_auc": [
-        0.795256076388889,
-        0.7676399739583333,
-        0.7342241753472223
-      ],
-      "configs": [
-        {
-          "kind": "linear",
-          "C": 0.3
-        },
-        {
-          "kind": "linear",
-          "C": 3.0
-        },
-        {
-          "kind": "linear",
-          "C": 30.0
-        }
-      ]
-    },
-    {
-      "fold": 5,
-      "chosen": {
-        "kind": "linear",
-        "C": 0.3
-      },
-      "old_graph_source_auc": 0.7701757812500001,
-      "source_candidate_auc": [
-        0.7893749999999999,
         0.7691796875000001,
-        0.7444759114583335
+        0.7890646701388888,
+        0.7983224826388889,
+        0.7743663194444445,
+        0.7830957031249999,
+        0.7885980902777778,
+        0.758288845486111,
+        0.7869086371527778,
+        0.79388671875,
+        0.7731608072916667,
+        0.7540581597222222,
+        0.7483072916666667,
+        0.7289529079861111,
+        0.7819552951388888,
+        0.7769151475694444,
+        0.7498893229166665
       ],
       "configs": [
         {
           "kind": "linear",
+          "view": "center",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "center",
           "C": 0.3
         },
         {
           "kind": "linear",
+          "view": "center",
           "C": 3.0
         },
         {
           "kind": "linear",
-          "C": 30.0
+          "view": "within8_z",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "within8_z",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "within8_z",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 3.0
         }
       ]
     }
   ],
-  "new_set_inner_neural_fits": 30,
-  "new_set_outer_neural_fits": 0,
-  "pair_initial_classifier_fits": 95,
-  "pair_range_classifier_fits": 50,
-  "new_fusion_head_fits": 80,
-  "range_fusion_reused_all_parent_folds": true,
-  "official_baseline_user_report": 88.13,
+  "classifier_fits": 275,
+  "new_full_fusion_heads": 160,
+  "new_residual_heads": 5,
   "promotion": false,
-  "public_training": false,
   "holdout_used": false,
-  "official_submissions": 0
+  "public_training": false,
+  "official_submissions": 0,
+  "official_baseline_user_report": 88.13
 }

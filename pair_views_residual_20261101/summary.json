@@ -1,0 +1,55 @@
+{
+  "primary_pooled_auc": 0.8478069444444445,
+  "baseline_pooled_auc": 0.8484631944444445,
+  "DEP_auc": 0.76329375,
+  "paired_person_delta_95CI": [
+    -0.0020689236111111117,
+    0.0008917013888888866
+  ],
+  "folds": [
+    {
+      "fold": 1,
+      "beta": [
+        0.12125220967817761,
+        -0.00040436877560786087
+      ],
+      "reload_error": 0.0
+    },
+    {
+      "fold": 2,
+      "beta": [
+        0.06637949345011296,
+        0.012574322621032849
+      ],
+      "reload_error": 0.0
+    },
+    {
+      "fold": 3,
+      "beta": [
+        0.157726378231776,
+        -0.012730329708220094
+      ],
+      "reload_error": 0.0
+    },
+    {
+      "fold": 4,
+      "beta": [
+        0.16647626870701085,
+        0.012144957431574989
+      ],
+      "reload_error": 0.0
+    },
+    {
+      "fold": 5,
+      "beta": [
+        0.11384812113939406,
+        -0.0056870232385430475
+      ],
+      "reload_error": 0.0
+    }
+  ],
+  "cohort_reused": true,
+  "independent_confirmation": false,
+  "baseline_preserved": true,
+  "official_submission": false
+}

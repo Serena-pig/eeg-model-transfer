@@ -1,0 +1,613 @@
+{
+  "selections": [
+    {
+      "fold": 1,
+      "chosen": {
+        "kind": "linear",
+        "view": "within8_z",
+        "C": 0.3
+      },
+      "existing_pair_source_auc": 0.7947254774305555,
+      "source_candidate_auc": [
+        0.7884700520833333,
+        0.7947254774305555,
+        0.7761740451388889,
+        0.7956401909722223,
+        0.8065158420138889,
+        0.7816232638888889,
+        0.7877539062500001,
+        0.7964887152777778,
+        0.7703526475694444,
+        0.7967751736111112,
+        0.8063292100694445,
+        0.7878559027777778,
+        0.7670421006944445,
+        0.7538313802083334,
+        0.7290277777777777,
+        0.7852452256944444,
+        0.7830186631944444,
+        0.7521050347222222
+      ],
+      "configs": [
+        {
+          "kind": "linear",
+          "view": "center",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "center",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "center",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "within8_z",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "within8_z",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "within8_z",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 3.0
+        }
+      ]
+    },
+    {
+      "fold": 2,
+      "chosen": {
+        "kind": "linear",
+        "view": "relative",
+        "C": 0.3
+      },
+      "existing_pair_source_auc": 0.7783420138888889,
+      "source_candidate_auc": [
+        0.7716948784722222,
+        0.7783420138888889,
+        0.7533279079861112,
+        0.7766666666666666,
+        0.7794032118055556,
+        0.7461631944444445,
+        0.7739952256944445,
+        0.7730631510416667,
+        0.7278135850694445,
+        0.7815527343750001,
+        0.7909505208333334,
+        0.7623784722222222,
+        0.7522287326388888,
+        0.7400271267361112,
+        0.7205078125,
+        0.7712565104166667,
+        0.7632063802083333,
+        0.7248415798611112
+      ],
+      "configs": [
+        {
+          "kind": "linear",
+          "view": "center",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "center",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "center",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "within8_z",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "within8_z",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "within8_z",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 3.0
+        }
+      ]
+    },
+    {
+      "fold": 3,
+      "chosen": {
+        "kind": "linear",
+        "view": "relative",
+        "C": 0.3
+      },
+      "existing_pair_source_auc": 0.7882085503472223,
+      "source_candidate_auc": [
+        0.7835221354166666,
+        0.7882085503472223,
+        0.7567957899305555,
+        0.7862597656249999,
+        0.7932020399305555,
+        0.7553645833333333,
+        0.779958767361111,
+        0.7834711371527777,
+        0.7433355034722222,
+        0.7931651475694445,
+        0.8021343315972222,
+        0.7726844618055555,
+        0.7644878472222223,
+        0.759638671875,
+        0.7374685329861113,
+        0.780869140625,
+        0.7649273003472223,
+        0.7322460937499999
+      ],
+      "configs": [
+        {
+          "kind": "linear",
+          "view": "center",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "center",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "center",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "within8_z",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "within8_z",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "within8_z",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 3.0
+        }
+      ]
+    },
+    {
+      "fold": 4,
+      "chosen": {
+        "kind": "linear",
+        "view": "relative",
+        "C": 0.3
+      },
+      "existing_pair_source_auc": 0.795256076388889,
+      "source_candidate_auc": [
+        0.7875694444444444,
+        0.795256076388889,
+        0.7676399739583333,
+        0.7923133680555556,
+        0.8010796440972222,
+        0.7692979600694444,
+        0.7875108506944444,
+        0.7933018663194444,
+        0.7539019097222223,
+        0.7969867621527779,
+        0.8068033854166667,
+        0.77662109375,
+        0.7702973090277777,
+        0.7586512586805556,
+        0.7397200520833334,
+        0.7819086371527778,
+        0.7701030815972223,
+        0.7320475260416668
+      ],
+      "configs": [
+        {
+          "kind": "linear",
+          "view": "center",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "center",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "center",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "within8_z",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "within8_z",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "within8_z",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 3.0
+        }
+      ]
+    },
+    {
+      "fold": 5,
+      "chosen": {
+        "kind": "linear",
+        "view": "within8_z",
+        "C": 0.3
+      },
+      "existing_pair_source_auc": 0.7893749999999999,
+      "source_candidate_auc": [
+        0.7813498263888887,
+        0.7893749999999999,
+        0.7691796875000001,
+        0.7890646701388888,
+        0.7983224826388889,
+        0.7743663194444445,
+        0.7830957031249999,
+        0.7885980902777778,
+        0.758288845486111,
+        0.7869086371527778,
+        0.79388671875,
+        0.7731608072916667,
+        0.7540581597222222,
+        0.7483072916666667,
+        0.7289529079861111,
+        0.7819552951388888,
+        0.7769151475694444,
+        0.7498893229166665
+      ],
+      "configs": [
+        {
+          "kind": "linear",
+          "view": "center",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "center",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "center",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "within8_z",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "within8_z",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "within8_z",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "within8_rank",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "relative",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "regional",
+          "C": 3.0
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 0.03
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 0.3
+        },
+        {
+          "kind": "linear",
+          "view": "spatial",
+          "C": 3.0
+        }
+      ]
+    }
+  ],
+  "all5outer3inner_complete": true,
+  "public_training": false,
+  "holdout_used": false,
+  "official_submissions": 0
+}

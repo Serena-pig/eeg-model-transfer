@@ -1,0 +1,12 @@
+{
+  "primary_metric": "unweighted_pooled_auc",
+  "fixed_C": 0.01,
+  "correction_parameters": 2,
+  "features": "centered new-view minus previous comparator logit; clinical CF interaction; both gated by frozen teacher uncertainty",
+  "teacher_frozen": true,
+  "loss": ".5 BCE + .5 exact pooled pair logistic + ridge",
+  "hyperparameters_not_selected_on_outer": true,
+  "source_meta_in_sample_used_for_fit_not_validation": true,
+  "public_training": false,
+  "script_sha256": "89306c12d7b6eb1c1fa89ffc8e032f78f85040e950a96709ffc909ca79ee91ba"
+}

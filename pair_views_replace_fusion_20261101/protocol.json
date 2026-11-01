@@ -1,0 +1,29 @@
+{
+  "variants": [
+    "subbag16_rawmean",
+    "subbag16_groupmean"
+  ],
+  "bags_fixed": 16,
+  "primary_metric": "unweighted_pooled_auc",
+  "primary_variant": "subbag16_rawmean_calibrated",
+  "new_expert": "static graph retained; source-inner-selected feature-view comparator replacing prior comparator",
+  "additional_neural_columns": [
+    87,
+    88
+  ],
+  "old_CNN_retained": true,
+  "real_public_data_used": false,
+  "subbag_fraction_fixed": 0.8,
+  "resampling": "Subject clusters with all40windows; diagnosis stratum masses preserve actual proportions",
+  "seed_fixed": 1030,
+  "C_inherited": 0.01,
+  "conditional_mix_fixed": 0.5,
+  "ranking_loss": "Exact weighted all-pairs logistic loss on conditional-posterior logits",
+  "total_weight_per_bag": "Original source N",
+  "warm_start": "Full source fit, no out-of-bag validation claimed",
+  "CPU_workers": 1,
+  "no_outer_parameter_search": true,
+  "base_models_retrained": 0,
+  "calibration": "Previous source-inner policy inherited",
+  "script_sha256": "dc52c0b03fff05f844da18f14df4521cc20ab23418298eafdf0b11af1d62ce89"
+}
